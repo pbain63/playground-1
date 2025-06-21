@@ -92,7 +92,6 @@ img {
 .main {
   margin-top: 2em;
   margin-bottom: 2em;
- 
 }
 .section-title {
   color: #87629a;
@@ -106,28 +105,28 @@ img {
   color: #fff;
   background-color: #136c72;
   text-align: center;
-  padding: 0 1em ;
-  
+  padding: 0 1em;
 }
-
 
 @media (max-width: 800px) {
   .nav__list {
     font-size: 1rem;
-    gap: 1em;
+    gap: 0.5em;
   }
   .row {
     display: block;
   }
-  .hero__img, .sidebar {
+  .hero__img,
+  .sidebar {
     margin-top: 3em;
   }
-  .hero__text, .hero__img, .primary-content, .sidebar {
+  .hero__text,
+  .hero__img,
+  .primary-content,
+  .sidebar {
     width: 100%;
-    
   }
   .sidebar {
     padding: 1em;
   }
-
 }
