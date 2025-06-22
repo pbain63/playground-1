@@ -64,7 +64,7 @@ h2 {
 .image-one,
 .brown-bg__text,
 .image-two {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   width: 100%;
 }
 
