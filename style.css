@@ -106,3 +106,25 @@ h2 {
   color: #fff;
   /* border: 2px solid red; */
 }
+
+@media (max-width: 800px) {
+  .image-one,
+  .brown-bg__text {
+    margin-left: 0;
+  }
+
+  .white-bg__text,
+  .black-bg-container,
+  .brown-bg-container {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-inline: 2em;
+  }
+  .black-bg__text {
+    padding: 3em;
+  }
+  .brown-bg__text {
+    padding-top: 3em;
+  }
+}
