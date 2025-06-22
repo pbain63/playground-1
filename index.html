@@ -3,92 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>প্রান্তর</title>
+    <title>Flexbox Challenge 4</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
-      <nav class="nav container">
-        <img src="./img/logo.svg" alt="logo" />
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-        </ul>
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#" class="nav__link">Sign In</a></li>
-          <li class="nav__item">
-            <a href="#" class="nav__link nav__link--button">Sign up</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="hero">
-      <div class="container row">
-        <div class="hero__text">
-          <h1>Responsive layouts don’t have to be a struggle</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-          <a href="#" class="btn">I want to learn</a>
+      <section class="container">
+        <div class="hero">
+          <div class="hero__text">
+            <p>Lorem ipsum sit</p>
+            <h1>Responsive layouts don’t have to be a struggle</h1>
+          </div>
         </div>
-        <img
-          src="./img/hero-img.jpg"
-          class="hero__img"
-          alt="Ux design sketches"
-        />
-      </div>
-    </section>
-
-    <main class="main container row">
-      <section class="primary-content">
-        <h2 class="section-title">
-          Quality designs made custom, on demand, just for you
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam.
-        </p>
       </section>
-      <aside class="sidebar">
-        <h2 class="sidebar-title">Cheap</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
-
-        <h2 class="sidebar-title">Quick</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
-
-        <h2 class="sidebar-title">Quality</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
-      </aside>
+    </header>
+    <main>
+      <section class="container">
+        <div class="white-bg-container">
+          <h2>Quality Designs</h2>
+          <div class="white-bg__text">
+            <p class="first-para">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui
+              vivamus arcu felis bibendum ut tristique. Arcu dui vivamus arcu
+              felis. Sociis natoque penatibus et magnis dis.
+            </p>
+            <p class="second-para">
+              Felis donec et odio pellentesque diam volutpat. Aliquam purus sit
+              amet luctus venenatis. Turpis in eu mi bibendum neque egestas
+              congue quisque egestas. Pellentesque sit amet porttitor eget dolor
+              morbi non.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="container colored-bg">
+        <div class="black-bg">
+          <div class="black-bg-container">
+            <div class="black-bg__text">
+              <h2>Made custom for you</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam.
+              </p>
+            </div>
+            <img
+              src="./assets/image-01.jpg"
+              class="image-one"
+              alt="a person capturing sunrise in mobile alone on mountain"
+            />
+          </div>
+        </div>
+        <div class="brown-bg">
+          <div class="brown-bg-container">
+            <img
+              src="./assets/image-02.jpg"
+              class="image-two"
+              alt="sun set on hill area"
+            />
+            <div class="brown-bg__text">
+              <h2>Created with care</h2>
+              <p>
+                Felis donec et odio pellentesque diam volutpat. Aliquam purus
+                sit amet luctus venenatis. Turpis in eu mi bibendum neque
+                egestas congue quisque egestas. Pellentesque sit amet porttitor
+                eget dolor morbi non.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="./script.js"></script>
   </body>
 </html>

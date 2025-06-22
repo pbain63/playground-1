@@ -1,7 +1,11 @@
-# playground-1
-For net practice
+# flexbox-challenge
+To achieve and practice responsive design and the desired outcome of challenge created this repository
 
 
 ## Live Demo:
 
-https://pbain63.github.io/playground-1
+https://pbain63.github.io/flexbox-challenge
+
+## Technology:
+
+HTML5, CSS3
