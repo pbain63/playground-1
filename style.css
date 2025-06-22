@@ -64,7 +64,7 @@ h2 {
 .image-one,
 .brown-bg__text,
 .image-two {
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   width: 100%;
 }
 
@@ -122,7 +122,7 @@ h2 {
     padding-inline: 2em;
   }
   .black-bg__text {
-    padding: 3em;
+    padding: 3em 0;
   }
   .brown-bg__text {
     padding-top: 3em;
