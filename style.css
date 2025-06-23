@@ -5,126 +5,56 @@
 }
 body {
   margin: 0;
-  padding: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 21px;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+  color: #222c2a;
 }
-.hero {
-  background: #f3eed9;
-  /* border: 2px solid red; */
+img {
+  max-width: 100%;
 }
-.hero__text {
-  min-height: 660px;
-  margin: 0 auto;
-  width: 54%;
-  max-width: 1128px;
-  /* border: 2px solid yellow; */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.hero__text P {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 6px;
-}
-h1 {
-  margin-top: 0;
-  font-size: 60px;
-  color: #824936;
-}
-
 h1,
 h2 {
-  font-family: "Playfair", serif;
+  font-family: "Playfair Display", sans-serif;
   font-weight: 900;
+  margin-top: 0;
+  line-height: 1.1;
 }
-
-.white-bg-container {
+section {
+  padding: 4em 0;
+}
+.container {
+  width: 85%;
   margin: 0 auto;
-  max-width: 1128px;
-  /* border: 2px solid red; */
-  padding: 3rem 0;
 }
-.white-bg-container h2 {
+.section-title {
+  font-size: 2.25rem;
+  color: #f3eed9;
+}
+.section-title--dark {
+  color: #824936;
+}
+.intro {
+  background: #f3eed9;
+  padding: 200px 0;
   text-align: center;
   color: #824936;
 }
-.white-bg__text {
-  display: flex;
-  gap: 2rem;
-  /* border: 2px solid magenta; */
+.intro__text {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 1.125rem;
+  color: #222c2a;
+  margin: 0 0 0.25em;
 }
-.first-para,
-.second-para,
-.black-bg__text,
-.image-one,
-.brown-bg__text,
-.image-two {
-  /* border: 2px solid greenyellow; */
-  width: 100%;
+.intro__title {
+  font-size: 3.75rem;
 }
-
-h2 {
-  font-size: 36px;
-}
-.colored-bg {
-}
-.black-bg {
+.section-three {
   background-color: #222c2a;
   color: #fff;
-  /* border: 2px solid red; */
 }
-.black-bg-container,
-.brown-bg-container {
-  max-width: 1128px;
-  margin: 0 auto;
-  /* border: 2px solid yellow; */
-  padding: 3rem 2rem 3rem 0;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-}
-
-.image-one {
-  margin-left: 2rem;
-}
-
-.brown-bg__text {
-  margin-left: 2rem;
-}
-.brown-bg__text h2,
-.black-bg__text h2 {
-  margin-top: 0;
-}
-
-.brown-bg {
+.section-four {
   background-color: #824936;
   color: #fff;
-  /* border: 2px solid red; */
-}
-
-@media (max-width: 800px) {
-  .image-one,
-  .brown-bg__text {
-    margin-left: 0;
-  }
-
-  .white-bg__text,
-  .black-bg-container,
-  .brown-bg-container {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding-inline: 2em;
-  }
-  .black-bg__text {
-    padding: 3em 0;
-  }
-  .brown-bg__text {
-    padding-top: 3em;
-  }
 }
