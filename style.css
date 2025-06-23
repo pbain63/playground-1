@@ -26,6 +26,7 @@ section {
 .container {
   width: 85%;
   margin: 0 auto;
+  max-width: 1128px;
 }
 .section-title {
   font-size: 2.25rem;
@@ -39,7 +40,11 @@ section {
   padding: 200px 0;
   text-align: center;
   color: #824936;
+  min-height: 960px;
+  display: flex;
+  align-items: center;
 }
+
 .intro__text {
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -57,4 +62,16 @@ section {
 .section-four {
   background-color: #824936;
   color: #fff;
+}
+
+@media (min-width: 800px) {
+  .row {
+    display: flex;
+  }
+  .col {
+    width: 100%;
+  }
+  .col + .col {
+    margin-left: 5em;
+  }
 }
