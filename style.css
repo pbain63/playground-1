@@ -36,7 +36,8 @@ li {
   margin-bottom: 16px;
   cursor: pointer;
 }
-li:hover, li:focus {
+li:hover,
+li:focus {
   opacity: 0.75;
 }
 section {
