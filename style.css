@@ -7,25 +7,72 @@
 }
 
 body {
-  background: purple;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-@media (max-width: 900px) {
-  body {
-    background: green;
-  }
+header {
+  background: dodgerblue;
+  padding: 32px 64px;
+  font-size: 32px;
+  color: white;
+}
+main {
+  display: flex;
+  flex: 1;
+}
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  background: palevioletred;
+  color: white;
+
+  padding: 0 0 0 64px;
+}
+li {
+  font-size: 24px;
+  list-style: none;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+li:hover, li:focus {
+  opacity: 0.75;
+}
+section {
+  background: blanchedalmond;
+  font-size: 24px;
+  margin: 16px;
+  padding: 16px;
+}
+footer {
+  background: darkslateblue;
+  color: white;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 800px) {
-  body {
-    background: brown;
+  main {
+    flex-direction: column;
   }
-}
-@media (max-width: 700px) {
-  body {
-    background: pink;
+  header {
+    text-align: center;
+    padding: 24px;
   }
-}
-@media (max-width: 600px) {
-  body {
-    background: blue;
+  aside {
+    width: auto;
+    /* padding: 16px 0; */
+  }
+  ul {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 10px 0;
+  }
+  li {
+    margin: 0;
   }
 }
