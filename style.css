@@ -16,3 +16,7 @@ header {
   font-size: 2rem;
   color: white;
 }
+main {
+  display: flex;
+  flex: 1;
+}
