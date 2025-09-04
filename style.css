@@ -10,3 +10,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+header {
+  background: dodgerblue;
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  color: white;
+}
