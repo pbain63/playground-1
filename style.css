@@ -25,4 +25,5 @@ aside {
   color: white;
   width: 19rem;
   /* flex-shrink: 0; */
+  padding: 0 0 0 4rem;
 }
