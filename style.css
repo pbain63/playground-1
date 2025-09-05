@@ -20,3 +20,9 @@ main {
   display: flex;
   flex: 1;
 }
+aside {
+  background: palevioletred;
+  color: white;
+  width: 19rem;
+  /* flex-shrink: 0; */
+}
