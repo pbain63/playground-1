@@ -37,3 +37,9 @@ li:hover,
 li:focus {
   opacity: 0.75;
 }
+section {
+  background: blanchedalmond;
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
