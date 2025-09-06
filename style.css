@@ -33,3 +33,7 @@ li {
   margin-bottom: 1rem;
   cursor: pointer;
 }
+li:hover,
+li:focus {
+  opacity: 0.75;
+}
