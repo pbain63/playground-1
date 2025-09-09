@@ -43,3 +43,11 @@ section {
   margin: 1rem;
   padding: 1rem;
 }
+footer {
+  background: darkslateblue;
+  color: white;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
