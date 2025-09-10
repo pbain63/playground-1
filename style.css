@@ -55,5 +55,8 @@ footer {
   main {
     flex-direction: column;
   }
-  
+  header {
+    text-align: center;
+    padding: 1.5rem;
+  }
 }
