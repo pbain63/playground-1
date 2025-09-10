@@ -51,3 +51,9 @@ footer {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  
+}
