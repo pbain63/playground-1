@@ -59,4 +59,8 @@ footer {
     text-align: center;
     padding: 1.5rem;
   }
+  aside {
+    width: auto;
+    padding: 1rem 0;
+  }
 }
