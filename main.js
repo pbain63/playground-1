@@ -8,9 +8,10 @@ navToggle.addEventListener("click", () => {
   isOpen = !isOpen;
   // 2. Show or hide the menu
   navList.classList.toggle("nav--visible");
+  //  if (isOpen) {
+  //   navToggle.textContent = "✖"; // Menu is open, show a close icon
+  // } else {
+  //   navToggle.textContent = "☰"; // Menu is closed, show a hamburger icon
+  // }
+  navToggle.textContent = isOpen ? "✖" : "☰";
 });
-//  if (isOpen) {
-//   navToggle.textContent = "✖"; // Menu is open, show a close icon
-// } else {
-//   navToggle.textContent = "☰"; // Menu is closed, show a hamburger icon
-// }
