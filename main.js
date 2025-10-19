@@ -14,4 +14,6 @@ navToggle.addEventListener("click", () => {
   //   navToggle.textContent = "☰"; // Menu is closed, show a hamburger icon
   // }
   navToggle.textContent = isOpen ? "✖" : "☰";
+  // 4. Update the accessibility attribute
+  navToggle.setAttribute("aria-expanded", isOpen);
 });
