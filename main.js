@@ -6,6 +6,8 @@ let isOpen = false;
 navToggle.addEventListener("click", () => {
   // 1. Flip the state
   isOpen = !isOpen;
+  // 2. Show or hide the menu
+  navList.classList.toggle("nav--visible");
 });
 //  if (isOpen) {
 //   navToggle.textContent = "✖"; // Menu is open, show a close icon
