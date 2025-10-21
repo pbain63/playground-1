@@ -18,8 +18,53 @@ body {
 header {
   background: rgb(78, 155, 228);
   /* color: white; */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid red;
+}
+.nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+.nav__link {
+  background: green;
+  /* margin-top: 0.1rem ; */
+  padding: 1.25rem 0;
+  display: block;
+  text-align: center;
+  /* border: 2px solid red; */
+}
+.nav__item + .nav__item {
+  /* border: 2px solid red; */
+  margin-top: 0.15rem;
 }
 
+.nav__list {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  max-width: 250px;
+  overflow-y: auto;
+  max-height: 0;
+  opacity: 0;
+  border: 2px solid green;
+  /* background: green; */
+}
+.nav__list.nav--visible {
+  max-height: 60vh;
+  opacity: 1;
+}
 /* main */
 main {
   height: 400ch;
