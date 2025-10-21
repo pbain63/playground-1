@@ -17,4 +17,10 @@ body {
 }
 header {
   background: rgb(78, 155, 228);
+  /* color: white; */
+}
+
+/* main */
+main {
+  height: 400ch;
 }
