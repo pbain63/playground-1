@@ -65,6 +65,11 @@ header {
   max-height: 60vh;
   opacity: 1;
 }
+.nav__link:hover,
+.nav__link:focus {
+  opacity: 0.75;
+  font-weight: 700;
+}
 /* main */
 main {
   height: 400ch;
