@@ -74,3 +74,8 @@ header {
 main {
   height: 400ch;
 }
+
+/*  */
+@media (min-width: 768px) {
+
+}
