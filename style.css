@@ -84,4 +84,13 @@ main {
   .nav-toggle {
     display: none;
   }
+  .nav__list {
+    position: static;
+    opacity: 1;
+    max-height: none;
+    /* background: red; */
+    display: flex;
+    max-width: none;
+    justify-content:space-between;
+  }
 }
