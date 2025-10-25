@@ -97,4 +97,8 @@ main {
     background: none;
     /* border: 2px solid red; */
   }
+  .nav__link:hover,
+  .nav__link:focus {
+    font-weight: normal;
+  }
 }
