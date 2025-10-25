@@ -79,7 +79,6 @@ main {
 @media (min-width: 768px) {
   .container {
     width: 80%;
-    border: 2px solid red;
   }
   .nav-toggle {
     display: none;
@@ -91,6 +90,10 @@ main {
     /* background: red; */
     display: flex;
     max-width: none;
-    justify-content:space-between;
+    justify-content: space-between;
+  }
+  .nav__link {
+    background: none;
+    /* border: 2px solid red; */
   }
 }
