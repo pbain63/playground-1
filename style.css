@@ -91,6 +91,7 @@ main {
     display: flex;
     max-width: none;
     justify-content: space-between;
+    border: none;
   }
   .nav__link {
     background: none;
