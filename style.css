@@ -91,7 +91,7 @@ main {
     /* background: red; */
     display: flex;
     max-width: none;
-    justify-content: space-between;
+    justify-content:flex-end;
     border: none;
   }
   .nav__link {
