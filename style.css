@@ -91,8 +91,11 @@ main {
     /* background: red; */
     display: flex;
     max-width: none;
-    justify-content:flex-end;
+    justify-content: flex-end;
+    gap: 1rem;
+    /* align-items: center; */
     border: none;
+    border: 2px solid red;
   }
   .nav__link {
     background: none;
