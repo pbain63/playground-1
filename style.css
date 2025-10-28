@@ -105,4 +105,9 @@ main {
   .nav__link:focus {
     font-weight: normal;
   }
+  .nav__item + .nav__item {
+    /* border: 2px solid red; */
+    margin-top: 0;
+  }
+  
 }
