@@ -54,7 +54,7 @@ header {
   top: 100%;
   left: 0%;
   width: 100%;
-  max-width: 250px;
+  /* max-width: 250px; */
   overflow-y: auto;
   max-height: 0;
   opacity: 0;
