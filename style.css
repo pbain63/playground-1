@@ -111,8 +111,6 @@ main {
   }
   .last__link {
     background: blue;
-    /* border: 5px 2px; */
     border-radius: 100px;
-    /* padding: 0.75rem 0.25rem */
   }
 }
