@@ -42,7 +42,6 @@ header {
   text-align: center;
   color: white;
   font-size: 1.25rem;
-  /* border: 2px solid red; */
 }
 .nav__item + .nav__item {
   /* border: 2px solid red; */
@@ -59,7 +58,6 @@ header {
   max-height: 0;
   opacity: 0;
   border: 2px solid green;
-  /* background: green; */
 }
 .nav__list.nav--visible {
   max-height: 60vh;
