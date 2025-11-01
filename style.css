@@ -95,18 +95,15 @@ main {
     justify-content: flex-end;
     gap: 2rem;
     border: none;
-    /* border: 2px solid red; */
   }
   .nav__link {
     background: none;
-    /* border: 2px solid red; */
   }
   .nav__link:hover,
   .nav__link:focus {
     font-weight: normal;
   }
   .nav__item + .nav__item {
-    /* border: 2px solid red; */
     margin-top: 0;
   }
   .last__link {
