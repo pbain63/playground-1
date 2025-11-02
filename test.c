@@ -1,10 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    char ch;
-    ch = 'x';
-    printf("Value stored in ch is %c\n", ch);
-    ch = 'y';
-    printf("Value stored in ch is %c\n", ch);
+    int number1, number2;
+    number1 = 12;
+    number2 = 4;
+    printf("number1 + number2 = %d\n", number1 + number2);
+    printf("number1 - number2 = %d\n", number1 - number2);
+    printf("number1 * number2 = %d\n", number1 * number2);
+    printf("number1 / number2 = %d\n", number1 / number2);
     return 0;
 }
