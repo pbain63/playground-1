@@ -6,9 +6,14 @@ int main()
     {
         printf("Numbers are equal.");
     }
+    else if (n1 > n2)
+    {
+        printf("n1 is greater than n2.");
+    }
+
     else
     {
-        printf("Numbers are not equal.");
+        printf("n1 is smaller than n2.");
     }
 
     return 0;
