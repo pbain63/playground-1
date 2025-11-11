@@ -8,4 +8,4 @@ https://pbain63.github.io/playground-1
 
 ## Technology:
 
-HTML5, CSS3
+HTML5, CSS3, JavaScript
