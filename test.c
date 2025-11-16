@@ -1,12 +1,12 @@
 #include <stdio.h>
 int main()
 {
-    int i;
-    i = 0;
-    while (i < 100)
+    int n;
+    n = 1;
+    while (n <= 100)
     {
-        printf("I love Bangladesh.\n");
-        i = i + 1;
+        printf("%d\n", n);
+        n = n + 1;
     }
     return 0;
 }
