@@ -1,14 +1,13 @@
 #include <stdio.h>
 int main()
 {
-    int n, sum;
-    sum = 0;
+    int n;
     n = 1;
-    while (n <= 100)
+    do
     {
-        sum = sum + n;
+        printf("%d\n", n);
         n = n + 1;
-    }
-    printf("Result: %d|n", sum);
+    } while (n <= 100);
+
     return 0;
 }
