@@ -1,15 +1,17 @@
 #include <stdio.h>
 int main()
 {
-    int n;
+    int n, sum;
+    sum = 0;
     n = 1;
     while (n <= 100)
     {
         if (n % 2 == 1)
         {
-            printf("%d\n", n);
+            sum = sum + n;
         }
         n = n + 1;
     }
+    printf("Result: %d\n", sum);
     return 0;
 }
