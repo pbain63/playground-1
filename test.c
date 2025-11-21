@@ -5,9 +5,11 @@ int main()
     // sum = 0;
     for (n = 1; n <= 100; n = n + 1)
     {
+        if (n % 2 == 0)
+        {
+            printf("Result: %d\n", n);
+        }
         // sum = sum + n;
-         printf("Result: %d\n", n);
     }
-   
     return 0;
 }
