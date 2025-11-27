@@ -1,18 +1,11 @@
 #include <stdio.h>
 int main()
 {
-    int marks[5];
-
-    marks[0] = 87;
-    marks[1] = 82;
-    marks[2] = 76;
-    marks[3] = 85;
-    marks[4] = 88;
-
-    printf("%d\n", marks[0]);
-    printf("%d\n", marks[1]);
-    printf("%d\n", marks[2]);
-    printf("%d\n", marks[3]);
-    printf("%d\n", marks[4]);
+    int marks[] = [ 87, 82, 76, 85, 88 ];
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d\n", marks[i]);
+    }
     return 0;
 }
