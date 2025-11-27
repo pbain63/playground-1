@@ -5,7 +5,8 @@ int main()
     int i;
     for (i = 0; i < 5; i++)
     {
-        printf("%d\n", marks[i]);
+        scanf("%d", &marks[i]);
+        // printf("%d\n", marks[i]);
     }
     return 0;
 }
