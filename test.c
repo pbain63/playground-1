@@ -6,7 +6,7 @@ int main()
     sum = 0;
     for (i = 0; i < 10; i = i + 1)
     {
-        sum = sum * numbers[i];
+        sum = sum + numbers[i];
     }
     printf("Sum: %d\n", sum);
     return 0;
