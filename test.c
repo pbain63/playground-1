@@ -1,11 +1,18 @@
 #include <stdio.h>
 int main()
 {
-    int a = 15, b = 9;
-    int c;
-    c = a;
-    a = b;
-    b = c;
-    printf("Value of a is %d, value of b is %d\n", a, b);
+    int ara[] = {10, 20, 30, 40, 50};
+    int n = 5, i;
+    int temp;
+    for (i = 0; i < n / 2; i++)
+    {
+        temp = ara[i];
+        ara[i] = ara[n - 1 - i];
+        ara[n - 1 - i] = temp;
+    }
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\n", ara[i]);
+    }
     return 0;
 }
