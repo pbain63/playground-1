@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main()
 {
-    int numbers[10] = { 9, 76, 2, 45, 3, 81, 25, 33, 71, 10 };
+    int numbers[10] = {9, 76, 2, 45, 3, 81, 25, 33, 71, 10};
     int i, sum;
     sum = 0;
-    for (i = 0; i < 10; i = i + 1)
+    for (i = 0; i < 10; i += 1)
     {
         sum = sum + numbers[i];
     }
