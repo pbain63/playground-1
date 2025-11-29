@@ -1,13 +1,11 @@
 #include <stdio.h>
 int main()
 {
-    int numbers[10] = {9, 76, 2, 45, 3, 81, 25, 33, 71, 10};
-    int i, sum;
-    sum = 0;
-    for (i = 0; i < 10; i += 1)
-    {
-        sum = sum + numbers[i];
-    }
-    printf("Sum: %d\n", sum);
+    int a = 15, b = 9;
+    int c;
+    c = a;
+    a = b;
+    b = c;
+    printf("Value of a is %d, value of b is %d\n", a, b);
     return 0;
 }
