@@ -1,9 +1,9 @@
 #include <stdio.h>
 int main()
 {
-    int ara[] = {1, 2, 3, 5, 8, 13, 21, 34, 55};
+    int ara[] = {5, 8, 1, 9, 4, 10};
     int key, i, n;
-    n = 9;
+    n = 6;
     scanf("%d", &key);
     for (i = 0; i < n; i++)
     {
