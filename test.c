@@ -1,15 +1,21 @@
 #include <stdio.h>
 int main()
 {
-    char name[80];
-    int i, length;
-    scanf("%s", name);
-    i = 0;
-    while (name[i] != '\0')
+    int ara[] = {1, 2, 3, 5, 8, 13, 21, 34, 55};
+    int key, i, n;
+    n = 9;
+    scanf("%d", &key);
+    for (i = 0; i < n; i++)
     {
-        i = i + 1;
+        if (ara[i] == key)
+        {
+            printf("%d is found in the array.\n", key);
+            break;
+        }
     }
-    length = i;
-    printf("%s has %d characters.\n", name, length);
+    if (i == n)
+    {
+        printf("%d is not found in the array.\n", key);
+    }
     return 0;
 }
