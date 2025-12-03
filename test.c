@@ -2,18 +2,10 @@
 #include <math.h>
 int main()
 {
-    double num, root;
-    printf("Enter a non-negative number: ");
-    scanf("%lf", &num);
-    if (num > 0)
-    {
-        printf("Error: Square root of a negative number is not a real number.\n");
-    }
-    else
-    {
-        root = sqrt(num);
-        printf("Square root of %lf is %lf\n", num, root);
-    }
+    double p, x, y;
+    scanf("%lf %lf", &x, &y);
+    p = pow(x, y);
+    printf("%lf to the power %lf is: %lf\n", x, y, p);
 
     return 0;
 }
