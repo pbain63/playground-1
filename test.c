@@ -3,6 +3,7 @@ float celsius_to_fahrenheit(float celsius);
 int main()
 {
     float celsius, fahrenheit;
+    printf("Enter temperature in Celsius: ");
     scanf("%f", &celsius);
     fahrenheit = celsius_to_fahrenheit(celsius);
     printf("Fahrenheit = %.2f\n", fahrenheit);
