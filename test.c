@@ -1,22 +1,14 @@
 #include <stdio.h>
-#include <string.h>
+float celsius_to_fahrenheit(float celsius);
 int main()
 {
-    char s1[80], s2[80];
-    int value;
-    scanf("%s %s", s1, s2);
-    value = strcmp(s1, s2);
-    if (value == 0)
-    {
-        printf("%s and %s are equal.\n", s1, s2);
-    }
-    else if (value > 0)
-    {
-        printf("%s is greater than %s.\n", s1, s2);
-    }
-    else
-    {
-        printf("%s is smaller than %s.\n", s1, s2);
-    }
+    float celsius, fahrenheit;
+    scanf("%f", &celsius);
+    fahrenheit = celsius_to_fahrenheit(celsius);
+    printf("Fahrenheit = %.2f\n", fahrenheit);
     return 0;
+}
+float celsius_to_fahrenheit(float celsius)
+{
+    return (celsius * 9 / 5) + 32;
 }
