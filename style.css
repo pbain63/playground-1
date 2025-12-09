@@ -8,3 +8,6 @@
 .nav__item {
   list-style: none;
 }
+.nav__link {
+  text-decoration: none;
+}
