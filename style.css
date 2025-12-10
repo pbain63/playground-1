@@ -8,8 +8,9 @@
 header {
   background: blue;
 }
-container {
+.dropdown-container {
   width: 90%;
+  margin: 0 auto;
 }
 .nav__item {
   list-style: none;
