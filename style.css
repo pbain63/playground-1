@@ -20,4 +20,5 @@ header {
 .nav__link {
   text-decoration: none;
   color: white;
+  text-transform: uppercase;
 }
