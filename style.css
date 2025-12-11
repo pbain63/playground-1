@@ -11,11 +11,11 @@ header {
 .dropdown-container {
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 }
 .nav__item {
   list-style: none;
   border: 2px solid red;
-  text-align: center;
 }
 .nav__link {
   text-decoration: none;
