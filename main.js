@@ -7,3 +7,8 @@ menuTitle.addEventListener("click", (e) => {
     navList.classList.toggle("visible");
   }
 });
+window.addEventListener("click", (e) => {
+  if (!dropdownContainer.contains(e.target)) {
+    navList.classList.remove("visible");
+  }
+});
