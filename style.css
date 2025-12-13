@@ -12,6 +12,8 @@ header {
   width: 90%;
   margin: 0 auto;
   text-align: center;
+  line-height: 3.125rem;
+  cursor: pointer;
 }
 .nav__item {
   list-style: none;
