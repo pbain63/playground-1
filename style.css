@@ -28,3 +28,6 @@ header {
 .menu-title {
   background-color: rgb(163, 162, 162);
 }
+.nav__list {
+  display: none;
+}
