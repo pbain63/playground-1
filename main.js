@@ -1,14 +1,14 @@
 const dropdownContainer = document.querySelector(".dropdown-container");
 const menuTitle = document.querySelector(".menu-title");
-const navList = document.querySelector(".nav__list");
+const dropdownMenu = document.querySelector(".dropdown-menu");
 
 menuTitle.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) {
-    navList.classList.toggle("visible");
+    dropdownMenu.classList.toggle("visible");
   }
 });
 window.addEventListener("click", (e) => {
   if (!dropdownContainer.contains(e.target)) {
-    navList.classList.remove("visible");
+    dropdownMenu.classList.remove("visible");
   }
 });
