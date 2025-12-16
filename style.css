@@ -22,3 +22,6 @@
   background-color: rgb(99, 97, 97);
   display: none;
 }
+.visible {
+  display: block;
+}
