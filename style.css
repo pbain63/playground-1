@@ -27,4 +27,6 @@ li:hover {
 }
 .visible {
   display: block;
+  animation: expand 500ms ease-in-out;
+  transform-origin: top;
 }
