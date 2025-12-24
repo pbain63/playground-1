@@ -17,5 +17,6 @@ li {
 }
 ul {
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  /* gap: 2rem; */
 }
