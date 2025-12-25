@@ -5,11 +5,13 @@
   margin: 0;
   padding: 0;
 }
-header {
-    width: 90%;
-    max-width: 1200px;
-    border: 2px solid red;
-    margin: auto;
+
+nav {
+  width: 90%;
+  max-width: 1200px;
+  border: 2px solid red;
+  margin: auto;
+  background: blue;
 }
 
 li {
