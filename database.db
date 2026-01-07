@@ -1,3 +1,3 @@
-SELECT name, population
+SELECT name
 FROM world
-WHERE name IN ('France', 'Germany', 'Italy');
+WHERE name LIKE "%United%";
