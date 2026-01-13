@@ -1,4 +1,4 @@
--- 8
+-- 9
 SELECT yr, subject, winner
 FROM nobel
-WHERE (subject = "physics" AND yr = 1980) OR (subject = "chemistry" AND yr = 1984);
+WHERE yr = 1980 AND subject NOT LIKE "chemistry" AND subject NOT LIKE "medicine";
