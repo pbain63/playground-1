@@ -1,4 +1,4 @@
--- 6
-SELECT *
+-- 7
+SELECT winner
 FROM nobel
-WHERE winner IN ('Theodore Roosevelt', 'Thomas Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
+WHERE winner LIKE 'John%';
