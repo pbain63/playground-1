@@ -1,4 +1,4 @@
--- 4
-SELECT winner
+-- 5
+SELECT yr, subject, winner
 FROM nobel
-WHERE subject = 'peace' AND yr >= 2000;
+WHERE subject = 'literature' AND yr >= 1980 AND yr <= 1989;
