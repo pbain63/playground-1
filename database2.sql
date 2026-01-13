@@ -1,4 +1,4 @@
--- 7
-SELECT winner
+-- 8
+SELECT yr, subject, winner
 FROM nobel
-WHERE winner LIKE 'John%';
+WHERE (subject = "physics" AND yr = 1980) OR (subject = "chemistry" AND yr = 1984);
