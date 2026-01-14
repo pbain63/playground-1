@@ -1,4 +1,4 @@
--- 11
+-- 12
 SELECT *
 FROM nobel
-WHERE winner = "PETER GRÜNBERG";
+WHERE winner = "EUGENE O'NEILL";
