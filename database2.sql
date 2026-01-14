@@ -1,4 +1,4 @@
--- 10
-SELECT yr, subject, winner
+-- 11
+SELECT *
 FROM nobel
-WHERE subject = 'Medicine' AND yr < 1910 OR subject = 'Literature' AND yr >= 2004;
+WHERE winner = "PETER GRÜNBERG";
