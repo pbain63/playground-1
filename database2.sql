@@ -1,4 +1,5 @@
--- 12
-SELECT *
+-- 13
+SELECT winner, yr, subject
 FROM nobel
-WHERE winner = "EUGENE O'NEILL";
+WHERE winner LIKE "Sir%"
+ORDER BY yr DESC, winner ASC;
