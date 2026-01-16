@@ -1,6 +1,6 @@
---> 2
+--> 3
 SELECT name
-  FROM world
- WHERE continent IN
-  (SELECT continent FROM world
-    WHERE name='Bhutan')
+  FROM bbc b1
+ WHERE population> 
+  5*(SELECT AVG(population) FROM bbc
+     WHERE region=b1.region)
