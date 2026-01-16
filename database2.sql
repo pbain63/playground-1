@@ -1,7 +1,5 @@
---> 14
-SELECT winner, subject
-FROM nobel
-WHERE yr = 1984
-ORDER BY
-CASE WHEN subject IN ('Physics', 'Chemistry') THEN 1 ELSE 0
-END, subject, winner;
+--> 1
+SELECT name, gdp_per_capita
+FROM (SELECT name, gdp/population AS gdp_per_capita
+    FROM world) X
+WHERE gdp_per_capita > 20000;
