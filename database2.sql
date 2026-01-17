@@ -1,4 +1,7 @@
---> 1
-SELECT name FROM world WHERE continent = 
-(SELECT continent 
-FROM world WHERE name = 'Brazil')
+--> 2
+SELECT name
+FROM world
+WHERE continent IN 
+(SELECT continent
+FROM world
+WHERE name = 'Brazil' OR name = 'Mexico')
