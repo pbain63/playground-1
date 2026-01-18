@@ -1,7 +1,6 @@
---> 2
-SELECT name
-FROM world
-WHERE continent IN 
-(SELECT continent
-FROM world
-WHERE name = 'Brazil' OR name = 'Mexico')
+--> 3
+SELECT
+ population/(SELECT population FROM world
+             WHERE name='United Kingdom')
+  FROM world
+WHERE name = 'China'
