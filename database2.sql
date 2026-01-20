@@ -1,6 +1,7 @@
---> 4
-SELECT name FROM world
- WHERE population > ALL
-      (SELECT population FROM world
-        WHERE continent='Europe')
+-->1. List each country name where the population is
+--  larger than that of 'Russia'.
+
+SELECT name
+FROM world
+WHERE population > (SELECT population from world WHERE name = 'Russia')
 
