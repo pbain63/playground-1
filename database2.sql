@@ -1,12 +1,11 @@
 /*
-Q.2.
-Show the countries in Europe with a per capita GDP 
-greater than 'United Kingdom'.
+Q.5.
+Show the name and the population of each country in 
+Europe. Show the population as a percentage of the 
+population of Germany.
 */
 
-SELECT name 
+SELECT name, CONCAT(ROUND((population / (SELECT 
+    population FROM world WHERE name = 'Germany'))*100, 0), '%')
 FROM world
-WHERE continent = 'Europe' AND gdp/ population >
-(SELECT gdp/ population
-FROM world
-WHERE name = 'United Kingdom')
+WHERE continent = 'Europe'; 
