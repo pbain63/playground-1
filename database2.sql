@@ -1,9 +1,13 @@
 /*
-Q.5.
- Find the largest country in the world, by population.*/
+Q.6.
+ Which countries have a GDP greater than every 
+ country in Europe? [Give the name only.] (Some 
+ countries may have NULL gdp values)
+ */
 
-SELECT name
-  FROM world
- WHERE population >= ALL(SELECT population
-                           FROM world
-                          WHERE population>0)
+SELECT name 
+FROM world
+WHERE gdp > 
+    ALL(SELECT gdp 
+    FROM world
+    WHERE continent = 'Europe' AND gdp > 0)
