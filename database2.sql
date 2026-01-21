@@ -1,11 +1,9 @@
 /*
 Q.5.
-Show the name and the population of each country in 
-Europe. Show the population as a percentage of the 
-population of Germany.
-*/
+ Find the largest country in the world, by population.*/
 
-SELECT name, CONCAT(ROUND((population / (SELECT 
-    population FROM world WHERE name = 'Germany'))*100, 0), '%')
-FROM world
-WHERE continent = 'Europe'; 
+SELECT name
+  FROM world
+ WHERE population >= ALL(SELECT population
+                           FROM world
+                          WHERE population>0)
