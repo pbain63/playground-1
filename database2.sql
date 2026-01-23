@@ -1,9 +1,7 @@
 /*
 Q.7.
- The total population and GDP of Europe
+ What are the regions?
  */
 
 
-SELECT SUM(population), SUM(gdp)
-  FROM world
-  WHERE continent = 'Europe'
+SELECT DISTINCT continent FROM world
