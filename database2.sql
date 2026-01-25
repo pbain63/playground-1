@@ -1,7 +1,11 @@
 /*
 Q.1.
-Show the total population of the world.
+List each continent and the name of the country that 
+comes first alphabetically.
  */
 
-SELECT SUM(population)
-FROM world
+SELECT x.continent, x.name
+FROM world x
+  WHERE x.name <= ALL(SELECT y.name FROM world y
+     WHERE x.continent = y.continent)
+ORDER BY continent
