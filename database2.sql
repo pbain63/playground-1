@@ -1,11 +1,14 @@
 /*
-Q.1.
-List each continent and the name of the country that 
-comes first alphabetically.
+Q.9.
+Find the continents where all countries have a 
+population <= 25000000. Then find the names of 
+the countries associated with these continents. 
+Show name, continent and population.
  */
 
-SELECT x.continent, x.name
+SELECT x.name, x.continent, x.population
 FROM world x
-  WHERE x.name <= ALL(SELECT y.name FROM world y
-     WHERE x.continent = y.continent)
-ORDER BY continent
+WHERE 25000000 >= ALL (SELECT y.population 
+                       FROM world y
+                       WHERE x.continent = y.continent
+                       AND population > 0);
