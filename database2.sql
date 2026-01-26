@@ -1,13 +1,12 @@
 /*
-Q.10.
-Some countries have populations more than three times 
-that of all of their neighbours (in the same continent). 
-Give the countries and continents. 
+Q.1.
+Select the code that shows the name, region and 
+population of the smallest country in each region.
+
 */
 
-SELECT x.name, x.continent
-FROM world x
-WHERE  x.population >= ALL (SELECT y.population *3 
-    FROM world y WHERE x.continent = y.continent 
-    AND x.name <> y.name)
+SELECT region, name, population FROM bbc x WHERE 
+population <= ALL (SELECT population FROM bbc y 
+        WHERE y.region=x.region AND population>0)
+
             
