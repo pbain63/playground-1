@@ -1,9 +1,9 @@
 /*
 Q.
-Show the total population of the world.
+List all the continents - just once each.
 
 
 */
-SELECT SUM(population)
-FROM world
 
+SELECT DISTINCT continent
+FROM world
