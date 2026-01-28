@@ -2,8 +2,6 @@
 Q.
 Give the total GDP of Africa
 
-
 */
-
-SELECT SUM(gdp)
-FROM world WHERE continent = "Africa"
+SELECT  COUNT(name)  FROM world
+WHERE world.area > 1000000
