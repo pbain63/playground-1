@@ -1,9 +1,9 @@
 /*
 Q.
-List all the continents - just once each.
+Give the total GDP of Africa
 
 
 */
 
-SELECT DISTINCT continent
-FROM world
+SELECT SUM(gdp)
+FROM world WHERE continent = "Africa"
