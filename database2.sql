@@ -1,7 +1,10 @@
 /*
 Q.
-Give the total GDP of Africa
+5.
+What is the total population of ('Estonia', '
+Latvia', 'Lithuania')
 
 */
-SELECT  COUNT(name)  FROM world
-WHERE world.area > 1000000
+SELECT SUM(population)
+FROM world
+WHERE name IN ('Estonia', 'Latvia', 'Lithuania')
