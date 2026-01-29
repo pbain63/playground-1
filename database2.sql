@@ -1,10 +1,10 @@
 /*
 Q.
 5.
-What is the total population of ('Estonia', '
-Latvia', 'Lithuania')
+For each continent show the number of countries:
 
 */
-SELECT SUM(population)
+
+SELECT continent, COUNT(name)
 FROM world
-WHERE name IN ('Estonia', 'Latvia', 'Lithuania')
+GROUP BY continent
