@@ -1,7 +1,7 @@
 /*
 Q.
 5.
-For each continent show the number of countries:
+For each continent show the total population:
 
 */
 
