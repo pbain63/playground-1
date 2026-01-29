@@ -1,15 +1,17 @@
 /*
 Q.
 5.
-WHERE and GROUP BY. The WHERE filter takes place 
-before the aggregating function. For each relevant 
-continent show the number of countries that has a 
-population of at least 200000000.
+GROUP BY and HAVING. The HAVING clause is tested 
+after the GROUP BY. You can test the aggregated 
+values with a HAVING clause. Show the total 
+population of those continents with a total 
+population of at least half a billion.
 
 */
 
-SELECT continent, COUNT(name)
+SELECT continent, SUM(population)
   FROM world
- WHERE population>200000000
  GROUP BY continent
+HAVING SUM(population)>500000000
+
 
