@@ -1,16 +1,14 @@
 /*
 Q.
-7.
-For each continent show the continent and number of 
-countries with populations of at least 10 million.
-
+8.
+List the continents that have a total population of 
+at least 100 million.
 
 */
 
-SELECT continent, COUNT(name) 
+SELECT continent
 FROM world
-WHERE population > 10000000
 GROUP BY continent
-
+HAVING SUM(population) >= 100000000;
 
 
