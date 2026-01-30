@@ -1,13 +1,16 @@
 /*
 Q.
-6.
+7.
 For each continent show the continent and number of 
-countries.
+countries with populations of at least 10 million.
+
 
 */
 
-SELECT continent, COUNT(name)
+SELECT continent, COUNT(name) 
 FROM world
-GROUP BY continent;
+WHERE population > 10000000
+GROUP BY continent
+
 
 
