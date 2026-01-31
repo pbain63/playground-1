@@ -1,10 +1,11 @@
 /*
 Q.
-1.
-Show the total number of prizes awarded.
+2.
+List each subject - just once
 
 */
 
-SELECT COUNT(winner) FROM nobel
+SELECT DISTINCT(subject)
+FROM nobel;
 
 
