@@ -1,14 +1,17 @@
 /*
 Q.
-5.
-For each subject show the first year that the prize 
-was awarded.
+6.
+For each subject show the number of prizes awarded 
+in the year 2000.
+
+d.
 
 
 */
 
-SELECT subject, MIN(yr)
+SELECT subject, COUNT(subject)
 FROM nobel
+WHERE yr = '2000'
 GROUP BY subject;
 
 
