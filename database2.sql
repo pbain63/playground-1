@@ -1,12 +1,13 @@
 /*
 Q.
-3.
-Show the total number of prizes awarded for Physics.
+4.
+For each subject show the subject and the number 
+of prizes.
 
 */
 
-SELECT COUNT(subject)
+SELECT subject, COUNT(subject)
 FROM nobel
-WHERE subject = 'Physics';
+GROUP BY subject;
 
 
