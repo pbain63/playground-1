@@ -1,17 +1,20 @@
 /*
 Q.
-6.
-For each subject show the number of prizes awarded 
-in the year 2000.
-
+13.
+List every match with the goals scored by each team as
+ shown. This will use "CASE WHEN" which has not been
+  explained in any previous exercises.
 d.
 
 
 */
 
-SELECT subject, COUNT(subject)
-FROM nobel
-WHERE yr = '2000'
-GROUP BY subject;
+SELECT game.mdate, game.team1, 
+SUM(CASE WHEN goal.teamid = game.team1 THEN 1 ELSE 0 END) AS score1,
+game.team2,
+SUM(CASE WHEN goal.teamid = game.team2 THEN 1 ELSE 0 END) AS score2
 
+FROM game LEFT JOIN goal ON matchid = id
+GROUP BY game.id,game.mdate, game.team1, game.team2 
+ORDER BY mdate,matchid,team1,team2;
 
