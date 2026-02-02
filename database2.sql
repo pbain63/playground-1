@@ -1,17 +1,15 @@
 /*
 Q.
-11.
-For every match involving 'POL', show the matchid, 
-date and the number of goals scored.
-
+10.
+Show the stadium and the number of goals scored in each 
+stadium.
 
 
 */
 
-SELECT matchid, mdate, COUNT(player)
-FROM goal
-  JOIN game
-    ON goal.matchid = game.id
-  WHERE team1 = 'POL' OR team2 = 'POL'
-  GROUP BY matchid, mdate;
+SELECT stadium, COUNT(player)
+FROM game
+  JOIN goal
+    ON game.id = goal.matchid
+  GROUP BY stadium;
 
