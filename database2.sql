@@ -1,11 +1,11 @@
 /*
 Q.
-5.
-Obtain a list of all MSPs by name, give the name of the MSP and the name of the party where available. Be sure that Canavan MSP, Dennis is in the list. Use ORDER BY msp.name to sort your output by MSP.
+3.
+Give the party and the leader for the parties which have leaders.
 
 
 */
-SELECT msp.Name, party.Name
-FROM msp LEFT JOIN party ON (msp.party = party.code)
 
-ORDER BY msp.name;
+SELECT party.Name, party.Leader
+FROM party
+WHERE Leader IS NOT NULL;
