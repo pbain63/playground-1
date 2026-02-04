@@ -1,13 +1,11 @@
 /*
 Q.
-6.
-Obtain a list of parties which have MSPs, include the number of MSPs.
-
+5.
+Obtain a list of all MSPs by name, give the name of the MSP and the name of the party where available. Be sure that Canavan MSP, Dennis is in the list. Use ORDER BY msp.name to sort your output by MSP.
 
 
 */
-
-SELECT party.Name, COUNT(msp.Name)
+SELECT msp.Name, party.Name
 FROM msp LEFT JOIN party ON (msp.party = party.code)
-WHERE party.Name IS NOT NULL
-GROUP BY party.Name;
+
+ORDER BY msp.name;
