@@ -1,14 +1,13 @@
 /*
 Q.
-4.
-The query shown gives the number of routes that visit either London Road (149) or Craiglockhart (53). Run the query and notice the two services that link these stops have a count of 2. Add a HAVING clause to restrict the output to these two routes.
+5.
+Execute the self join shown and observe that b.stop gives all the places you can get to from Craiglockhart, without changing routes. Change the query so that it shows the services from Craiglockhart to London Road.
 
 */
 
 
-SELECT company, num, COUNT(*)
-FROM route 
-WHERE stop=149 OR stop=53
-GROUP BY company, num
-HAVING COUNT(stop) = 2
+SELECT a.company, a.num, a.stop, b.stop
+FROM route a JOIN route b ON
+  (a.company=b.company AND a.num=b.num)
+WHERE a.stop=53 AND b.stop = 149
 
