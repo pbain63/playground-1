@@ -1,18 +1,13 @@
 /*
 Q.
-3.
-The number of confirmed case is cumulative - but we can use LAG to recover the number of new cases reported for each day.
-
-Show the number of new cases for each day, for Italy, for March.
+8.
+Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross'
 
 */
 
-SELECT 
-  name, 
-  DAY(whn), 
-  confirmed - LAG(confirmed, 1) OVER (PARTITION BY name ORDER BY whn) AS new
-FROM covid
-WHERE name = 'Italy' 
-  AND MONTH(whn) = 3 
-  AND YEAR(whn) = 2020
-ORDER BY whn;
+SELECT DISTINCT a.company, a.num
+FROM route a
+  JOIN route b ON (a.num=b.num AND a.company=b.company)
+  JOIN stops stopa ON (a.stop=stopa.id)
+  JOIN stops stopb ON (b.stop=stopb.id)
+WHERE stopa.name = 'Craiglockhart' AND stopb.name = 'Tollcross'
