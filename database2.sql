@@ -1,15 +1,12 @@
 /*
 Q.
-Exercise: 8 (Serge I: 2003-02-03)
-Find the makers producing PCs but not laptops.
+Exercise: 9 
+Find the makers of PCs with a processor speed of 450 MHz or more. Result set: maker.
 
 */
 
 SELECT DISTINCT maker
-FROM Product
-WHERE type = 'PC' AND maker NOT IN (
-    SELECT maker
-    FROM Product
-    WHERE type = 'Laptop'
-);
+FROM Product JOIN PC ON Product.model = PC.model
+WHERE speed >= 450;
+
 
