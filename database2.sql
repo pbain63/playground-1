@@ -1,12 +1,11 @@
 /*
 Q.
-Exercise: 9 
-Find the makers of PCs with a processor speed of 450 MHz or more. Result set: maker.
+Exercise: 10 
+Find the printer models having the highest price. Result set: model, price.
 
 */
 
-SELECT DISTINCT maker
-FROM Product JOIN PC ON Product.model = PC.model
-WHERE speed >= 450;
-
+SELECT model, price
+FROM Printer
+WHERE price = (SELECT MAX(price) FROM Printer)
 
