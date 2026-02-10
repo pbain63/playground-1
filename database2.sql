@@ -1,12 +1,15 @@
 /*
 Q.
-2. Select the code that shows the stops that are on route.num '2A' which can be reached with one bus from Haymarket?
-
+Exercise: 8 (Serge I: 2003-02-03)
+Find the makers producing PCs but not laptops.
 
 */
 
-SELECT S2.id, S2.name, R2.company, R2.num
-  FROM stops S1, stops S2, route R1, route R2
- WHERE S1.name='Haymarket' AND S1.id=R1.stop
-   AND R1.company=R2.company AND R1.num=R2.num
-   AND R2.stop=S2.id AND R2.num='2A'
+SELECT DISTINCT maker
+FROM Product
+WHERE type = 'PC' AND maker NOT IN (
+    SELECT maker
+    FROM Product
+    WHERE type = 'Laptop'
+);
+
