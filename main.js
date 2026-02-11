@@ -1,10 +1,12 @@
-const myObject = {
-    property: "Value",
-    otherProperty: 77,
-    "obnoxious property": function () {
-        // do stuff!
-    }
-}
+const playerOne = {
+    name: "tim",
+    maker: "X"
+};
 
-console.log(myObject.property);
-console.log(myObject["obnoxious property"]);
+const playerTwo = {
+    name: "jenn",
+    maker: "O"
+};
+
+console.log(playerOne.name);
+console.log(playerTwo.maker);
