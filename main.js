@@ -1,19 +1,15 @@
-const car = {
-    make: "Volkswagen",
-    model: "Golf",
-    year: 2026,
-    color: "blue",
-    priceUSD: 40000,
-
-
-    applyDiscount: function (discountPercentage) {
-        const multiplier = 1 - discountPercentage / 100;
-        this.priceUSD *= multiplier;
+const rps = {
+    playerScore: 0,
+    computerScore: 0,
+    playRound(playerChoice) {
+         // code to play the round, update score if needed, then return the result
     },
 
-    getSummary() {
-        return `${this.year} ${this.make} ${this.model} in ${this.color}, priced at $${this.priceUSD} (USD).`;
+    getWinningPlayer() {
+        // return the player with the most points ("player", "computer", or "tie")
     },
 
-
+    reset() {
+        // reset both players' scores to 0
+    },
 };
