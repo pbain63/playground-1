@@ -13,3 +13,16 @@ const rps = {
         // reset both players' scores to 0
     },
 };
+rps.playRound("rock");
+console.log(rps.playerScore);
+
+rps.playRound("rock");
+console.log(rps.computerScore);
+
+rps.playRound("scissors");
+console.log(rps.playerScore);
+console.log(rps.getWinningPlayer());
+
+rps.reset();
+console.log(rps.playerScore);
+console.log(rps.computerScore);
