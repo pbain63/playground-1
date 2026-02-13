@@ -1,28 +1,9 @@
-const rps = {
-    playerScore: 0,
-    computerScore: 0,
-    playRound(playerChoice) {
-         // code to play the round, update score if needed, then return the result
-    },
+let user = {
+    name: "John",
+    surName: "Smith",
 
-    getWinningPlayer() {
-        // return the player with the most points ("player", "computer", or "tie")
-    },
-
-    reset() {
-        // reset both players' scores to 0
-    },
+    get fullName() {
+        return `${this.name} ${this.surName}`;
+    }
 };
-rps.playRound("rock");
-console.log(rps.playerScore);
-
-rps.playRound("rock");
-console.log(rps.computerScore);
-
-rps.playRound("scissors");
-console.log(rps.playerScore);
-console.log(rps.getWinningPlayer());
-
-rps.reset();
-console.log(rps.playerScore);
-console.log(rps.computerScore);
+console.log(user.fullName);
