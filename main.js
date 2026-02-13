@@ -1,16 +1,22 @@
 let user = {
     name: "John",
-    surName: "Smith",
+    surName: "Smith"
+};
 
-    get fullName() {
+Object.defineProperty(user, 'fullName', {
+    get () {
         return `${this.name} ${this.surName}`;
     },
 
-    set fullName(value) {
+    set (value) {
         [this.name, this.name] = value.split(" ");
     }
-};
+})
+    
+
 user.fullName = "Alice Cooper";
 console.log(user.name);
 console.log(user.surName);
 console.log(user.fullName);
+
+for(let key in user) alert(key);
