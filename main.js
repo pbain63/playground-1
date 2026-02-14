@@ -1,17 +1,16 @@
-let user = {
-    get name() {
-        return this._name;
-    },
+function User(name, birthday) {
+    this.name = name;
+    this.birthday = birthday;
 
-    set name(value) {
-        if (value.length < 4) {
-            console.log("Name is too short, need at least 4 characters.");
-            return;
+    Object.defineProperty(this, "age", {
+        get() {
+            let todayYear = new Date().getFullYear();
+            return todayYear - this.birthday.getFullYear();
         }
-        this._name = value;
-    }
-};
-user.name = "Pete";
-console.log(user.name);
+    });
 
-user.name = "";
+}
+let john = new User("John", new Date(1992, 6, 1));
+console.log(john.birthday);
+console.log(john.age);
+
