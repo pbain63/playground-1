@@ -7,5 +7,5 @@ class User {
         alert(this.name);
     }
 }
-let user = new User("John");
-user.sayHi();
+
+alert(typeof User);
