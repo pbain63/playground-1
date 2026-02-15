@@ -9,3 +9,9 @@ class User {
 }
 
 alert(typeof User);
+
+alert(User = User.prototype.constructor);
+
+alert(User.prototype.sayHi);
+
+alert(Object.getOwnPropertyNames(User.prototype));
