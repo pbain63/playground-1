@@ -1,7 +1,6 @@
 class User {
-    name = "John";
+    name = prompt("Name, please?", "John");
 }
 
 let user = new User();
 alert(user.name);
-alert(User.prototype.name);
