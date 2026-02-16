@@ -1,6 +1,12 @@
-class User {
-    name = prompt("Name, please?", "John");
+class Button {
+    constructor(value) {
+        this.value = value;
+    }
+
+    click = () => {
+        alert(this.value);
+    }
 }
 
-let user = new User();
-alert(user.name);
+const button = new Button("hello");
+setTimeout(button.click, 1000);
