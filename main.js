@@ -1,9 +1,22 @@
-function makeClass(phrase) {
-    return class {
-        sayHi() {
-            alert(phrase);
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        if (value.length < 4) {
+            alert("Name is too short.");
+            return;
         }
+        this._name = value;
     }
 }
-let User = makeClass("Hello");
-new User().sayHi();
+
+let user = new User("John");
+alert(user.name);
+
+user = new User("");
