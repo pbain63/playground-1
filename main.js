@@ -1,18 +1,11 @@
-// rewriting class User in pure functions
+// "Named Class Expression"
+// (no such term in the spec, but that's similar to Named Function Expression)
+let User = class MyClass {
+    sayHi() {
+        alert(MyClass); // MyClass name is visible only inside the class
+    }
+};
 
-// 1. Create constructor function
-function User(name) {
-    this.name = name;
-  }
-  // a function prototype has "constructor" property by default,
-  // so we don't need to create it
-  
-  // 2. Add the method to prototype
-  User.prototype.sayHi = function() {
-    alert(this.name);
-  };
-  
-  // Usage:
-  let user = new User("John");
-  user.sayHi();
-  
+new User().sayHi(); // works, shows MyClass definition
+
+alert(MyClass); // error, MyClass name isn't visible outside of the class
