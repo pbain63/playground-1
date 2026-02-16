@@ -1,8 +1,7 @@
 class User {
     name = "John";
-
-    sayHi() {
-        alert(`Hello, ${this.name}!`);
-    }
 }
-new User().sayHi();
+
+let user = new User();
+alert(user.name);
+alert(User.prototype.name);
