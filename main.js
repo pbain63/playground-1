@@ -1,11 +1,9 @@
-// "Named Class Expression"
-// (no such term in the spec, but that's similar to Named Function Expression)
-let User = class MyClass {
-    sayHi() {
-        alert(MyClass); // MyClass name is visible only inside the class
+function makeClass(phrase) {
+    return class {
+        sayHi() {
+            alert(phrase);
+        }
     }
-};
-
-new User().sayHi(); // works, shows MyClass definition
-
-alert(MyClass); // error, MyClass name isn't visible outside of the class
+}
+let User = makeClass("Hello");
+new User().sayHi();
