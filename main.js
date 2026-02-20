@@ -1,13 +1,19 @@
-class SomeClass extends class {
+class ParentClass {
     constructor() {
-        console.log("Base class");
-
+      return 1;
     }
-} {
+  }
+  
+  console.log(new ParentClass()); // ParentClass {}
+  // The return value is ignored because it's not an object
+  // This is consistent with function constructors
+  
+  class ChildClass extends ParentClass {
     constructor() {
-        super();
-        console.log("Derived class");
-
+      super();
+      return 1;
     }
-}
-new SomeClass();
+  }
+  
+  console.log(new ChildClass()); // TypeError: Derived constructors may only return object or undefined
+  
