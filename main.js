@@ -1,11 +1,13 @@
-function OldStyleClass() {
-    this.someProperty = 1;
-}
-OldStyleClass.prototype.someMethod = function () { };
+class SomeClass extends class {
+    constructor() {
+        console.log("Base class");
 
-class ChildClass extends OldStyleClass { };
-class ModernClass {
-    someProperty = 1;
-    someMethod() { }
+    }
+} {
+    constructor() {
+        super();
+        console.log("Derived class");
+
+    }
 }
-class AnotherChildClass extends ModernClass { };
+new SomeClass();
