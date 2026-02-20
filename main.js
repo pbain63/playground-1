@@ -1,20 +1,11 @@
-class DateFormatter extends Date {
-    getFormattedDate() {
-        const months = [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-        ];
-        return `${this.getDate()}-${months[this.getMonth()]}-${this.getFullYear()}`;
-    }
+function OldStyleClass() {
+    this.someProperty = 1;
 }
-console.log(new DateFormatter("August 19, 1975 23:15:30").getFormattedDate());
+OldStyleClass.prototype.someMethod = function () { };
+
+class ChildClass extends OldStyleClass { };
+class ModernClass {
+    someProperty = 1;
+    someMethod() { }
+}
+class AnotherChildClass extends ModernClass { };
