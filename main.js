@@ -1,16 +1,8 @@
-const Animal = {
-    speak() {
-        console.log(`${this.name} makes a noise.`);
-
-    }
-};
-
-class Dog {
-    constructor(name) {
-        this.name = name;
+class C extends Object {
+    constructor(v){
+        super(v);
     }
 }
-Object.setPrototypeOf(Dog.prototype, Animal);
+console.log(new C(1) instanceof Number);
+console.log(C.keys({a:1, b:2}));
 
-const d = new Dog("Mitzie");
-d.speak();
