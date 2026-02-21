@@ -1,8 +1,10 @@
-class C extends Object {
-    constructor(v){
+
+function MyObject(v) {
+    return new Object(v);
+}
+class D extends MyObject{
+    constructor(v) {
         super(v);
     }
 }
-console.log(new C(1) instanceof Number);
-console.log(C.keys({a:1, b:2}));
-
+console.log(new D(1) instanceof Number);
