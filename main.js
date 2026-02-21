@@ -1,19 +1,16 @@
-class ParentClass {
-    constructor() {
-      return 1;
+const Animal = {
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+
     }
-  }
-  
-  console.log(new ParentClass()); // ParentClass {}
-  // The return value is ignored because it's not an object
-  // This is consistent with function constructors
-  
-  class ChildClass extends ParentClass {
-    constructor() {
-      super();
-      return 1;
+};
+
+class Dog {
+    constructor(name) {
+        this.name = name;
     }
-  }
-  
-  console.log(new ChildClass()); // TypeError: Derived constructors may only return object or undefined
-  
+}
+Object.setPrototypeOf(Dog.prototype, Animal);
+
+const d = new Dog("Mitzie");
+d.speak();
