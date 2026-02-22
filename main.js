@@ -1,32 +1,22 @@
-class Animal {
-  constructor(name) {
-    this.name = name;
+class BankAccount {
+  #balance = 0;
+
+  constructor(owner) {
+    this.owner = owner;
   }
 
-  speak() {
-    console.log(`${this.name} makes a noise`);
+  deposit(amount) {
+    this.#balance += amount;
+    console.log(`Deposited ${amount}. Current balance hidden!`);
 
   }
-}
-class Dog extends Animal {
-  speak() {
-    console.log(`${this.name} barks!`); //
 
-  }
-}
-
-class Bird extends Animal {
-  constructor(name, wingSpan) {
-    super(name); // Pass 'name' to the Animal constructor
-    this.wingSpan = wingSpan; // Add a new property unique to Bird
-  }
-
-  fly() {
-    console.log(`${this.name} is flying with a ${this.wingSpan} span!`);
+  showBalance() {
+    return `Account owner: ${this.owner}, Balance $${this.#balance}`
   }
 }
-const d = new Dog("Rex");
-d.speak();
 
-const e = new Bird("Humming bird");
-e.fly();
+const myAcc = new BankAccount("Alice");
+myAcc.deposit(100);
+myAcc.showBalance();
+// console.log(myAcc.#balance);
