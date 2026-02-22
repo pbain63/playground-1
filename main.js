@@ -15,5 +15,18 @@ class Dog extends Animal {
   }
 }
 
+class Bird extends Animal {
+  constructor(name, wingSpan) {
+    super(name); // Pass 'name' to the Animal constructor
+    this.wingSpan = wingSpan; // Add a new property unique to Bird
+  }
+
+  fly() {
+    console.log(`${this.name} is flying with a ${this.wingSpan} span!`);
+  }
+}
 const d = new Dog("Rex");
 d.speak();
+
+const e = new Bird("Humming bird");
+e.fly();
