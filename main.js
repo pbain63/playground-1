@@ -1,10 +1,19 @@
-class MyArray extends Array {
-    static get [Symbol.species]() {
-        return Array;
-    }
-}
-const a = new MyArray(1,2,3);
-const mapped = a.map((x) => x * x);
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
 
-console.log(mapped instanceof MyArray);
-console.log(mapped instanceof Array);
+  speak() {
+    console.log(`${this.name} makes a noise`);
+
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks!`); //
+
+  }
+}
+
+const d = new Dog("Rex");
+d.speak();
