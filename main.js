@@ -1,22 +1,19 @@
-class UserAccount {
-  #password;
-  constructor(initialPassword) {
-    this.#password = initialPassword;
-  }
+class Parent {
+  #familySecret = "The secret ingredient is butter.";
 
-  verifyPassword(guess) {
-    return guess === this.#password;
-  }
-
-  set updatePassword(newPassword) {
-    if (newPassword.length < 8) {
-      console.error("Error: Password must be at least 8 characters.");
-      return;
-    }
-    this.#password = newPassword;
-    console.log("Password updated securely!");
+  shareSecret() {
+    return this.#familySecret;
   }
 }
-const user = new UserAccount("secret123");
-user.updatePassword = "short";
-user.updatePassword = "superSecure456";
+
+class Child extends Parent {
+  revealSecret() {
+    // console.log(this.#familySecret);
+
+    console.log(`My parent says: ${this.shareSecret()}`);
+
+  }
+}
+
+const kid = new Child();
+kid.revealSecret();
