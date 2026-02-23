@@ -1,22 +1,22 @@
-class BankAccount {
-  #balance = 0;
-
-  constructor(owner) {
-    this.owner = owner;
+class UserAccount {
+  #password;
+  constructor(initialPassword) {
+    this.#password = initialPassword;
   }
 
-  deposit(amount) {
-    this.#balance += amount;
-    console.log(`Deposited ${amount}. Current balance hidden!`);
-
+  verifyPassword(guess) {
+    return guess === this.#password;
   }
 
-  showBalance() {
-    return `Account owner: ${this.owner}, Balance $${this.#balance}`
+  set updatePassword(newPassword) {
+    if (newPassword.length < 8) {
+      console.error("Error: Password must be at least 8 characters.");
+      return;
+    }
+    this.#password = newPassword;
+    console.log("Password updated securely!");
   }
 }
-
-const myAcc = new BankAccount("Alice");
-myAcc.deposit(100);
-myAcc.showBalance();
-// console.log(myAcc.#balance);
+const user = new UserAccount("secret123");
+user.updatePassword = "short";
+user.updatePassword = "superSecure456";
