@@ -1,11 +1,10 @@
-class ClassWithPrivateField {
-  #privateField;
+class C {
+  #x;
 
-  constructor() {
-    delete this.#privateField; // Syntax error
-    this.#undeclaredField = 42; // Syntax error
+  static getX(obj) {
+    return obj.#x;
   }
 }
 
-const instance = new ClassWithPrivateField();
-instance.#privateField; // Syntax error
+console.log(C.getX(new C())); // undefined
+console.log(C.getX({})); // TypeError: Cannot read private member #x from an object whose class did not declare it
