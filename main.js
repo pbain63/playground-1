@@ -1,19 +1,11 @@
-class Parent {
-  #familySecret = "The secret ingredient is butter.";
+class ClassWithPrivateField {
+  #privateField;
 
-  shareSecret() {
-    return this.#familySecret;
+  constructor() {
+    delete this.#privateField; // Syntax error
+    this.#undeclaredField = 42; // Syntax error
   }
 }
 
-class Child extends Parent {
-  revealSecret() {
-    // console.log(this.#familySecret);
-
-    console.log(`My parent says: ${this.shareSecret()}`);
-
-  }
-}
-
-const kid = new Child();
-kid.revealSecret();
+const instance = new ClassWithPrivateField();
+instance.#privateField; // Syntax error
