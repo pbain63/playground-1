@@ -1,14 +1,18 @@
-class C {
-  #x;
-  constructor(x) {
-    this.#x = x;
-  }
-  static getX(obj) {
-    if (#x in obj ) return obj.#x; 
-    return "obj must be an instance of C";
+class ClassWithPrivateField {
+  #privateField;
+
+  constructor() {
+    this.#privateField = 42;
   }
 }
-console.log(C.getX(new C("foo")));
-console.log(C.getX(new C(0.196)));
-console.log(C.getX(new C(new Date())));
-console.log(C.getX({}));
+
+class Subclass extends ClassWithPrivateField {
+  #subPrivateField;
+
+  constructor() {
+    super();
+    this.#subPrivateField = 23;
+  }
+}
+
+new Subclass(); // In some dev tools, it shows Subclass {#privateField: 42, #subPrivateField: 23}
