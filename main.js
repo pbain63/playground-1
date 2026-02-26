@@ -1,11 +1,12 @@
-// Private static fields
 
 class ClassWithPrivateStaticField {
   static #privateStaticField = 42;
 
   static publicStaticMethod() {
-    return ClassWithPrivateStaticField.#privateStaticField;
+    return this.#privateStaticField;
   }
 }
 
-console.log(ClassWithPrivateStaticField.publicStaticMethod()); // 42
+class Subclass extends ClassWithPrivateStaticField {}
+
+Subclass.publicStaticMethod(); // TypeError: Cannot read private member #privateStaticField from an object whose class did not declare it
