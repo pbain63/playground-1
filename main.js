@@ -1,3 +1,5 @@
+// Private instance methods
+
 class ClassWithPrivateMethod {
   #privateMethod() {
     return 42;
