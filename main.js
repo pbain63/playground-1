@@ -1,17 +1,10 @@
-class ClassWithPrivateAccessor {
-  #message;
+class C {
+  #method() {}
 
-  get #decoratedMessage() {
-    return `🎬${this.#message}🛑`;
-  }
-  set #decoratedMessage(msg) {
-    this.#message = msg;
-  }
-
-  constructor() {
-    this.#decoratedMessage = "hello world";
-    console.log(this.#decoratedMessage);
+  static getMethod(x) {
+    return x.#method;
   }
 }
 
-new ClassWithPrivateAccessor(); // 🎬hello world🛑
+console.log(C.getMethod(new C())); // [Function: #method]
+console.log(C.getMethod(C.prototype)); // TypeError: Receiver must be an instance of class C
