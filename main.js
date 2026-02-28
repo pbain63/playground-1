@@ -1,10 +1,13 @@
-class C {
-  #method() {}
 
-  static getMethod(x) {
-    return x.#method;
+// Private static methods
+class ClassWithPrivateStaticMethod {
+  static #privateStaticMethod() {
+    return 42;
+  }
+
+  static publicStaticMethod() {
+    return ClassWithPrivateStaticMethod.#privateStaticMethod();
   }
 }
 
-console.log(C.getMethod(new C())); // [Function: #method]
-console.log(C.getMethod(C.prototype)); // TypeError: Receiver must be an instance of class C
+console.log(ClassWithPrivateStaticMethod.publicStaticMethod()); // 42
