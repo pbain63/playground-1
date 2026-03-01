@@ -1,13 +1,20 @@
-class ClassWithPrivateStaticMethod {
-  static #privateStaticMethod() {
-    return 42;
+class PrivateConstructor {
+  static #isInternalConstructing = false;
+
+  constructor() {
+    if (!PrivateConstructor.#isInternalConstructing) {
+      throw new TypeError("PrivateConstructor is not constructable");
+    }
+    PrivateConstructor.#isInternalConstructing = false;
+    // More initialization logic
   }
 
-  static publicStaticMethod() {
-    return this.#privateStaticMethod();
+  static create() {
+    PrivateConstructor.#isInternalConstructing = true;
+    const instance = new PrivateConstructor();
+    return instance;
   }
 }
 
-class Subclass extends ClassWithPrivateStaticMethod {}
-
-console.log(Subclass.publicStaticMethod()); // TypeError: Cannot read private member #privateStaticMethod from an object whose class did not declare it
+new PrivateConstructor(); // TypeError: PrivateConstructor is not constructable
+PrivateConstructor.create(); // PrivateConstructor {}
