@@ -1,13 +1,13 @@
-
-// Private static methods
 class ClassWithPrivateStaticMethod {
   static #privateStaticMethod() {
     return 42;
   }
 
   static publicStaticMethod() {
-    return ClassWithPrivateStaticMethod.#privateStaticMethod();
+    return this.#privateStaticMethod();
   }
 }
 
-console.log(ClassWithPrivateStaticMethod.publicStaticMethod()); // 42
+class Subclass extends ClassWithPrivateStaticMethod {}
+
+console.log(Subclass.publicStaticMethod()); // TypeError: Cannot read private member #privateStaticMethod from an object whose class did not declare it
