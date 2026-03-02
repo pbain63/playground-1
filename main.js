@@ -1,20 +1,18 @@
-class PrivateConstructor {
-  static #isInternalConstructing = false;
+class ClassWithPrivateField {
+  #privateField;
 
   constructor() {
-    if (!PrivateConstructor.#isInternalConstructing) {
-      throw new TypeError("PrivateConstructor is not constructable");
-    }
-    PrivateConstructor.#isInternalConstructing = false;
-    // More initialization logic
-  }
-
-  static create() {
-    PrivateConstructor.#isInternalConstructing = true;
-    const instance = new PrivateConstructor();
-    return instance;
+    this.#privateField = 42;
   }
 }
 
-new PrivateConstructor(); // TypeError: PrivateConstructor is not constructable
-PrivateConstructor.create(); // PrivateConstructor {}
+class Subclass extends ClassWithPrivateField {
+  #subPrivateField;
+
+  constructor() {
+    super();
+    this.#subPrivateField = 23;
+  }
+}
+
+new Subclass(); // In some dev tools, it shows Subclass {#privateField: 42, #subPrivateField: 23}
