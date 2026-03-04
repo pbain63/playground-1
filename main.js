@@ -1,16 +1,12 @@
-class ClassWithPrivateStaticField {
-  static #privateStaticField = 42;
+class ClassWithPrivateMethod {
+  #privateMethod() {
+    return 42;
+  }
 
-  static publicStaticMethod() {
-    // When invoked through super, `this` still refers to Subclass
-    return this.#privateStaticField;
+  publicMethod() {
+    return this.#privateMethod();
   }
 }
 
-class Subclass extends ClassWithPrivateStaticField {
-  static callSuperMethod() {
-    return super.publicStaticMethod();
-  }
-}
-
-Subclass.callSuperMethod(); // TypeError: Cannot read private member #privateStaticField from an object whose class did not declare it
+const instance = new ClassWithPrivateMethod();
+console.log(instance.publicMethod()); // 42
