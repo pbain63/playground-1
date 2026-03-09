@@ -1,7 +1,14 @@
-class ClassWithStatic {
+class ClassWithStaticField {
   static staticField;
-  static staticFieldWithInitializer = value;
-  static staticMethod() {
-    // …
-  }
+  static staticFieldWithInitializer = "static field";
 }
+
+class SubclassWithStaticField extends ClassWithStaticField {
+  static subStaticField = "subclass field";
+}
+
+console.log(Object.hasOwn(ClassWithStaticField, "staticField")); // true
+console.log(ClassWithStaticField.staticField); // undefined
+console.log(ClassWithStaticField.staticFieldWithInitializer); // "static field"
+console.log(SubclassWithStaticField.staticFieldWithInitializer); // "static field"
+console.log(SubclassWithStaticField.subStaticField); // "subclass field"
