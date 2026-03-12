@@ -1,14 +1,15 @@
-class ClassWithStaticMethod {
-  static staticProperty = "someValue";
-  static staticMethod() {
-    return "static method has been called.";
+class ClassWithPrivate {
+  #privateField;
+  #privateFieldWithInitializer = 42;
+
+  #privateMethod() {
+    // …
   }
-  static {
-    console.log("Class static initialization block called");
+
+  static #privateStaticField;
+  static #privateStaticFieldWithInitializer = 42;
+
+  static #privateStaticMethod() {
+    // …
   }
 }
-
-console.log(ClassWithStaticMethod.staticProperty);
-// Expected output: "someValue"
-console.log(ClassWithStaticMethod.staticMethod());
-// Expected output: "static method has been called."
