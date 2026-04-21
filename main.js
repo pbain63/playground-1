@@ -1,11 +1,19 @@
-class ClassWithPrivateMethod {
-  #privateMethod() {
-    return 42;
+class ClassWithPrivateAccessor {
+  #message;
+
+  get #decoratedMessage() {
+    return `🎬${this.#message}🛑`;
   }
 
-  publicMethod() {
-    return this.#privateMethod();
+  set #decoratedMessage(msg) {
+    this.#message = msg;
   }
+
+  constructor() {
+    this.#decoratedMessage = "hello world";
+    console.log(this.#decoratedMessage);
+
+  }
+
 }
-const instance = new ClassWithPrivateMethod();
-console.log(instance.publicMethod());
+new ClassWithPrivateAccessor();
