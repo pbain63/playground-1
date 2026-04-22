@@ -1,19 +1,19 @@
-class ClassWithPrivateAccessor {
-  #message;
-
-  get #decoratedMessage() {
-    return `🎬${this.#message}🛑`;
-  }
-
-  set #decoratedMessage(msg) {
-    this.#message = msg;
-  }
+class PrivateConstructor {
+  static #isInternalConstructing = false;
 
   constructor() {
-    this.#decoratedMessage = "hello world";
-    console.log(this.#decoratedMessage);
+    if (!PrivateConstructor.#isInternalConstructing) {
+      throw new TypeError("PrivateConstructor is not constructable");
 
+    }
+    PrivateConstructor.#isInternalConstructing = false;
   }
 
+  static create() {
+    PrivateConstructor.#isInternalConstructing = true;
+    const instance = new PrivateConstructor();
+    return instance;
+  }
 }
-new ClassWithPrivateAccessor();
+new PrivateConstructor();
+PrivateConstructor.create();
