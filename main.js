@@ -1,19 +1,14 @@
-class PrivateConstructor {
-  static #isInternalConstructing = false;
-
-  constructor() {
-    if (!PrivateConstructor.#isInternalConstructing) {
-      throw new TypeError("PrivateConstructor is not constructable");
-
-    }
-    PrivateConstructor.#isInternalConstructing = false;
-  }
-
-  static create() {
-    PrivateConstructor.#isInternalConstructing = true;
-    const instance = new PrivateConstructor();
-    return instance;
-  }
+class ClassWithStaticField {
+  static staticField;
+  static staticFieldWithInitializer = "static field";
 }
-new PrivateConstructor();
-PrivateConstructor.create();
+
+class SubclassWithStaticField extends ClassWithStaticField {
+  static subStaticField = "subclass field";
+}
+
+console.log(Object.hasOwn(ClassWithStaticField, "staticField")); // true
+console.log(ClassWithStaticField.staticField); // undefined
+console.log(ClassWithStaticField.staticFieldWithInitializer); // "static field"
+console.log(SubclassWithStaticField.staticFieldWithInitializer); // "static field"
+console.log(SubclassWithStaticField.subStaticField); // "subclass field"
