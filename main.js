@@ -1,12 +1,16 @@
 class StaticMethodCall {
+  constructor() {
+    console.log(StaticMethodCall.staticProperty);
+    console.log(this.constructor.staticProperty);
+    console.log(StaticMethodCall.staticMethod());
+    console.log(this.constructor.staticMethod());
+    
+  }
+
   static staticProperty = "static property";
   static staticMethod() {
-    return `Static method and ${this.staticProperty} has been called`;
-  }
-  static anotherStaticMethod() {
-    return `${this.staticMethod()} from another static method}`;
+    return "static method has been called.";
   }
 }
 
-console.log(StaticMethodCall.staticMethod());
-console.log(StaticMethodCall.anotherStaticMethod());
+new StaticMethodCall();
