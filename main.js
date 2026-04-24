@@ -1,28 +1,12 @@
-class Triple {
-  static customName = "Tripler";
-  static description = "I triple any number you provide";
-  static calculate(n = 1) {
-    return n * 3; 
+class StaticMethodCall {
+  static staticProperty = "static property";
+  static staticMethod() {
+    return `Static method and ${this.staticProperty} has been called`;
+  }
+  static anotherStaticMethod() {
+    return `${this.staticMethod()} from another static method}`;
   }
 }
 
-class SquaredTriple extends Triple {
-  static longDescription;
-  static description = "I square the triple of any number you provide";
-  static calculate(n) {
-    return super.calculate(n) * super.calculate(n);
-  }
-}
-
-console.log(Triple.description);
-console.log(Triple.calculate());
-console.log(Triple.calculate(6));
-
-const tp = new Triple();
-
-console.log(SquaredTriple.calculate(3));
-console.log(SquaredTriple.description);
-console.log(SquaredTriple.longDescription);
-console.log(SquaredTriple.customName);
-
-console.log(tp.calculate(3));
+console.log(StaticMethodCall.staticMethod());
+console.log(StaticMethodCall.anotherStaticMethod());
