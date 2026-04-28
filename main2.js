@@ -1,4 +1,11 @@
-import { greeting, farewell } from "./main";
+const user = {
+    id: 42,
+    isVerified: true,
+};
 
-console.log(greeting);
-console.log(farewell);
+const { id, isVerified } = user;
+
+
+console.log(id);
+console.log(isVerified);
+
