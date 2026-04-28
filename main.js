@@ -1,8 +1,5 @@
-const greeting = (() => {
-    const greetingString = "Hello Odinite!";
-    const farewellString = "Bye bye Odinite!";
-    return greetingString;
-    // return farewellString;
-})();
+const greeting = "Hello Odinite!";
+const farewell = "Bye bye Odinite!";
 
+export {greeting, farewell};
 
