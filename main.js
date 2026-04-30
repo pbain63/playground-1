@@ -1,2 +1,2 @@
-const greeting = "Hello, Odinite!";
-export default greeting;
+export default "hello, Odinite!";
+export const farewell = "bye, bye, Odinite!";
