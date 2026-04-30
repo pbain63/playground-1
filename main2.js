@@ -1,2 +1,5 @@
-import helloOdinite from "./main.js";
-console.log(helloOdinite);
+import greeting, { farewell } from "./main.js";
+
+console.log(greeting);
+console.log(farewell);
+
