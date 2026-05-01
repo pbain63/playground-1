@@ -1,5 +1,6 @@
-import greeting, { farewell } from "./main.js";
+foo();
 
-console.log(greeting);
-console.log(farewell);
-
+export default function foo() {
+    console.log("Hi");
+    
+}
