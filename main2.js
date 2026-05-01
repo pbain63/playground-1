@@ -1,6 +1,2 @@
-foo();
-
-export default function foo() {
-    console.log("Hi");
-    
-}
+import m from "./main.js";
+console.log(m);
