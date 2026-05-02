@@ -1,3 +1,3 @@
-import cube from "./main.js";
+import { getPrimes } from "./main.js";
 
-console.log(cube(3));
+console.log(getPrimes(10));
