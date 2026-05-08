@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mobatheoctocat/my_package.git"
+    "url": "git+https://github.com/mobatheoctocat/my_package.git"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/monatheoctocat/my_package/issue"
   },
-  "homepage": "https://github.com/monatheoctocat/my_package"
+  "homepage": "https://github.com/monatheoctocat/my_package",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  }
 }
