@@ -1,11 +1,9 @@
-import path from "node:path";
-
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack"; // to access built-in plugins
 
 export default {
-  output: {
-    filename: "my-first-webpack.bundle.js",
-  },
   module: {
     rules: [{ test: /\.js$/, use: "babel-loader" }],
   },
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 };
