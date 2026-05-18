@@ -16,6 +16,10 @@ export default {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.scss$/i,
+        use: ["postcss-loader", "sass-loader"],
+      }
     ],
   },
 };
