@@ -20,6 +20,10 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: "asset/resource",
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        use: "asset/resource",
+      },
     ],
   },
 };
