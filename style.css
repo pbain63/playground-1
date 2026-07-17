@@ -14,8 +14,8 @@
   font-style: normal;
 }
 
-.hello {
+h1 {
   color: red;
   font-family: "MyFont";
-  background: url("./icon.png");
+  /* background: url("./icon.png"); */
 }
