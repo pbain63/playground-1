@@ -1,6 +1,28 @@
-const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
-const obj = JSON.parse(text);
-console.log(obj);
-obj.birth = new Date(obj.birth);
-console.log(obj.birth);
-console.log(obj.name);
+class Vehicle {
+    constructor(fuelCapacity, fuelEfficiency) {
+        this.fuelCapacity = fuelCapacity;
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    getRange() {
+        return this.fuelCapacity * this.fuelEfficiency;
+    }
+}
+
+class HybridVehicle extends Vehicle {
+    constructor(fuelCapacity, fuelEfficiency, electricRange) {
+        super(fuelCapacity, fuelEfficiency);
+        this.electricRange = electricRange;
+    }
+
+    getRange() {
+        return (this.fuelCapacity * this.fuelEfficiency) + this.electricRange;
+    }
+}
+
+const standardVehicle = new Vehicle(10, 15);
+const hybridVehicle = new HybridVehicle(10, 15, 50);
+
+console.log(standardVehicle.getRange());
+console.log(hybridVehicle.getRange());
+
