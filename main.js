@@ -1,28 +1,17 @@
-class Vehicle {
-    constructor(fuelCapacity, fuelEfficiency) {
-        this.fuelCapacity = fuelCapacity;
-        this.fuelEfficiency = fuelEfficiency;
-    }
+class Penguin {}
 
-    getRange() {
-        return this.fuelCapacity * this.fuelEfficiency;
-    }
-}
+class Bird {}
 
-class HybridVehicle extends Vehicle {
-    constructor(fuelCapacity, fuelEfficiency, electricRange) {
-        super(fuelCapacity, fuelEfficiency);
-        this.electricRange = electricRange;
-    }
+const flyer = {
+  fly() {
+    console.log(`Flap flap, I'm flying!`);
+  },
+};
 
-    getRange() {
-        return (this.fuelCapacity * this.fuelEfficiency) + this.electricRange;
-    }
-}
+Object.assign(Bird.prototype, flyer);
 
-const standardVehicle = new Vehicle(10, 15);
-const hybridVehicle = new HybridVehicle(10, 15, 50);
+const bird = new Bird();
+bird.fly();
 
-console.log(standardVehicle.getRange());
-console.log(hybridVehicle.getRange());
-
+const penguin = new Penguin();
+penguin.fly();
