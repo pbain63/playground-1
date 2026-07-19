@@ -1,17 +1,64 @@
-class Penguin {}
+class BooleanQuestion {
+  constructor(description) {
+    this.description = description;
+  }
 
-class Bird {}
+  printQuestionChoices() {
+    console.log("1.True");
+    console.log("2.False");
+  }
+}
 
-const flyer = {
-  fly() {
-    console.log(`Flap flap, I'm flying!`);
-  },
-};
+class MultipleChoiceQuestion {
+  constructor(description, options) {
+    this.description = description;
+    this.options = options;
+  }
 
-Object.assign(Bird.prototype, flyer);
+  printQuestionChoices() {
+    this.options.forEach((option, index) => {
+      console.log(`${index + 1}. ${option}`);
+    });
+  }
+}
 
-const bird = new Bird();
-bird.fly();
+class TextQuestion {
+  constructor(description) {
+    this.description = description;
+  }
 
-const penguin = new Penguin();
-penguin.fly();
+  printQuestionChoices() {
+    console.log("Answer:    ___________");
+  }
+}
+
+class RangeQuestion {
+  constructor(description) {
+    this.description = description;
+  }
+
+  printQuestionChoices() {
+    console.log("Minimum: _____________");
+    console.log("Maximum: _____________");
+  }
+}
+
+function printQuiz(questions) {
+  questions.forEach((question) => {
+    console.log(question.description);
+    question.printQuestionChoices();
+    console.log("");
+  });
+}
+
+const questions = [
+  new BooleanQuestion("This video is useful."),
+  new MultipleChoiceQuestion(
+    "What is your favorite language",
+    ["CSS3", "HTML5", "JS", "Python"]
+  ),
+  new TextQuestion("Describe your favorite JS feature"),
+  new RangeQuestion("What is the speed limit in your city"),
+]
+
+printQuiz(questions);
