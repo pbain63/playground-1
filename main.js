@@ -1,64 +1,31 @@
-class BooleanQuestion {
-  constructor(description) {
-    this.description = description;
-  }
-
-  printQuestionChoices() {
-    console.log("1.True");
-    console.log("2.False");
+class FlyingBird {
+  fly() {
+    console.log("I can fly.");
   }
 }
 
-class MultipleChoiceQuestion {
-  constructor(description, options) {
-    this.description = description;
-    this.options = options;
-  }
-
-  printQuestionChoices() {
-    this.options.forEach((option, index) => {
-      console.log(`${index + 1}. ${option}`);
-    });
+class SwimmingBird {
+  swim() {
+    console.log("I can swim.");
   }
 }
 
-class TextQuestion {
-  constructor(description) {
-    this.description = description;
-  }
-
-  printQuestionChoices() {
-    console.log("Answer:    ___________");
+class Duck extends FlyingBird {
+  quack() {
+    console.log("I can quack.");
   }
 }
 
-class RangeQuestion {
-  constructor(description) {
-    this.description = description;
-  }
-
-  printQuestionChoices() {
-    console.log("Minimum: _____________");
-    console.log("Maximum: _____________");
-  }
+function makeFlyingBirdFly(bird) {
+  bird.fly();
 }
 
-function printQuiz(questions) {
-  questions.forEach((question) => {
-    console.log(question.description);
-    question.printQuestionChoices();
-    console.log("");
-  });
+function makeSwimmingBirdSwim(bird) {
+  bird.swim();
 }
 
-const questions = [
-  new BooleanQuestion("This video is useful."),
-  new MultipleChoiceQuestion(
-    "What is your favorite language",
-    ["CSS3", "HTML5", "JS", "Python"]
-  ),
-  new TextQuestion("Describe your favorite JS feature"),
-  new RangeQuestion("What is the speed limit in your city"),
-]
+const duck = new Duck();
+// const penguin = new Penguin();
 
-printQuiz(questions);
+makeFlyingBirdFly(duck);
+// makeSwimmingBirdSwim(penguin);
