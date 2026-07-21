@@ -1,64 +1,57 @@
-class Entity {
-  constructor(name) {
-    this.name = name;
+class Store {
+  constructor(paymentProcessor) {
+    this.paymentProcessor = paymentProcessor;
+  }
+
+  purchaseBike(quantity) {
+    this.paymentProcessor.pay(200 * quantity);
+  }
+
+  purchaseHelmet(quantity) {
+    this.paymentProcessor.pay(15 * quantity);
   }
 }
 
-const mover = {
-  move() {
-    console.log(`${this.name} moved`);
-  },
-};
+class StripePaymentProcessor {
+  constructor(user) {
+    this.stripe = new Stripe(user);
+  }
 
-const attacker = {
-  attack(targetEntity) {
-    console.log(`${this.name} attacked ${targetEntity.name}
-      for ${this.attackDamage} damage`);
-    targetEntity.takeDamage(this.attackDamage);
-  },
-};
-
-const hasHealth = {
-  takeDamage(amount) {
-    this.health -= amount;
-    console.log(`${this.name} has ${this.health} health remaining`);
-  },
-};
-
-class Character extends Entity {
-  constructor(name, attackDamage, health) {
-    super(name);
-    this.attackDamage = attackDamage;
-    this.health = health;
+  pay(amountInDollars) {
+    this.stripe.makePayment(amountInDollars * 100);
   }
 }
 
-Object.assign(Character.prototype, mover);
-Object.assign(Character.prototype, attacker);
-Object.assign(Character.prototype, hasHealth);
+class Stripe {
+  constructor(user) {
+    this.user = user;
+  }
 
-class Wall extends Entity {
-  constructor(name, health) {
-    super(name);
-    this.health = health;
+  makePayment(amountInCents) {
+    console.log(
+      `${this.user} made payment of $${amountInCents / 100} with Stripe`
+    );
   }
 }
 
-Object.assign(Wall.prototype, hasHealth);
+class PaypalPaymentProcessor {
+  constructor(user) {
+    this.user = user;
+    this.paypal = new Paypal();
+  }
 
-class Turret extends Entity {
-  constructor(name, attackDamage) {
-    super(name);
-    this.attackDamage = attackDamage;
+  pay(amountInDollars) {
+    this.paypal.makePayment(this.user, amountInDollars);
   }
 }
 
-Object.assign(Turret.prototype, attacker);
+class Paypal {
+  makePayment(user, amountInDollars) {
+    console.log(`${user} made payment of $${amountInDollars} with Paypal`);
+  }
+}
 
-const turret = new Turret("Turret", 5);
-const character = new Character("Character", 3, 100);
-const wall = new Wall("Wall", 200);
+const store = new Store(new PaypalPaymentProcessor("John"));
 
-turret.attack(character);
-character.move();
-character.attack(wall);
+store.purchaseBike(2);
+store.purchaseHelmet(2);
