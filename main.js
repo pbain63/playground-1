@@ -1,31 +1,64 @@
-class FlyingBird {
-  fly() {
-    console.log("I can fly.");
+class Entity {
+  constructor(name) {
+    this.name = name;
   }
 }
 
-class SwimmingBird {
-  swim() {
-    console.log("I can swim.");
+const mover = {
+  move() {
+    console.log(`${this.name} moved`);
+  },
+};
+
+const attacker = {
+  attack(targetEntity) {
+    console.log(`${this.name} attacked ${targetEntity.name}
+      for ${this.attackDamage} damage`);
+    targetEntity.takeDamage(this.attackDamage);
+  },
+};
+
+const hasHealth = {
+  takeDamage(amount) {
+    this.health -= amount;
+    console.log(`${this.name} has ${this.health} health remaining`);
+  },
+};
+
+class Character extends Entity {
+  constructor(name, attackDamage, health) {
+    super(name);
+    this.attackDamage = attackDamage;
+    this.health = health;
   }
 }
 
-class Duck extends FlyingBird {
-  quack() {
-    console.log("I can quack.");
+Object.assign(Character.prototype, mover);
+Object.assign(Character.prototype, attacker);
+Object.assign(Character.prototype, hasHealth);
+
+class Wall extends Entity {
+  constructor(name, health) {
+    super(name);
+    this.health = health;
   }
 }
 
-function makeFlyingBirdFly(bird) {
-  bird.fly();
+Object.assign(Wall.prototype, hasHealth);
+
+class Turret extends Entity {
+  constructor(name, attackDamage) {
+    super(name);
+    this.attackDamage = attackDamage;
+  }
 }
 
-function makeSwimmingBirdSwim(bird) {
-  bird.swim();
-}
+Object.assign(Turret.prototype, attacker);
 
-const duck = new Duck();
-// const penguin = new Penguin();
+const turret = new Turret("Turret", 5);
+const character = new Character("Character", 3, 100);
+const wall = new Wall("Wall", 200);
 
-makeFlyingBirdFly(duck);
-// makeSwimmingBirdSwim(penguin);
+turret.attack(character);
+character.move();
+character.attack(wall);
