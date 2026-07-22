@@ -1,57 +1,29 @@
-class Store {
-  constructor(paymentProcessor) {
-    this.paymentProcessor = paymentProcessor;
-  }
+document.addEventListener("DOMContentLoaded", function (event) {
+  var orderModule = (function () {
+    var orders = {},
+      EST_DELIVERY = "current estimated delivery time",
+      estimatedDeliveryTime;
 
-  purchaseBike(quantity) {
-    this.paymentProcessor.pay(200 * quantity);
-  }
+    PubSub.subscribe(EST_DELIVERY, function (msg, data) {
+      console.log(msg);
+      estimatedDeliveryTime = data;
+    });
 
-  purchaseHelmet(quantity) {
-    this.paymentProcessor.pay(15 * quantity);
-  }
-}
+    return orders;
+  })();
 
-class StripePaymentProcessor {
-  constructor(user) {
-    this.stripe = new Stripe(user);
-  }
+  var deliveryModule = (function () {
+    var deliveries = {},
+      EST_DELIVERY = "current estimated delivery time";
 
-  pay(amountInDollars) {
-    this.stripe.makePayment(amountInDollars * 100);
-  }
-}
+    deliveries.getEstimatedDeliveryTime = function () {
+      var estimatedDeliveryTime = 1; // Hard-coded to 1 hour, but likely an API call.
 
-class Stripe {
-  constructor(user) {
-    this.user = user;
-  }
+      PubSub.publish(EST_DELIVERY, estimatedDeliveryTime);
+    };
 
-  makePayment(amountInCents) {
-    console.log(
-      `${this.user} made payment of $${amountInCents / 100} with Stripe`
-    );
-  }
-}
+    return deliveries;
+  })();
 
-class PaypalPaymentProcessor {
-  constructor(user) {
-    this.user = user;
-    this.paypal = new Paypal();
-  }
-
-  pay(amountInDollars) {
-    this.paypal.makePayment(this.user, amountInDollars);
-  }
-}
-
-class Paypal {
-  makePayment(user, amountInDollars) {
-    console.log(`${user} made payment of $${amountInDollars} with Paypal`);
-  }
-}
-
-const store = new Store(new PaypalPaymentProcessor("John"));
-
-store.purchaseBike(2);
-store.purchaseHelmet(2);
+  deliveryModule.getEstimatedDeliveryTime();
+});
