@@ -1,29 +1,48 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-  var orderModule = (function () {
-    var orders = {},
-      EST_DELIVERY = "current estimated delivery time",
-      estimatedDeliveryTime;
+function swimmer({ name }) {
+  return {
+    swim: () => console.log(`${name} swam`),
+  };
+}
 
-    PubSub.subscribe(EST_DELIVERY, function (msg, data) {
-      console.log(msg);
-      estimatedDeliveryTime = data;
-    });
+function attackerAndWalker({ name }) {
+  return {
+    attack: () => console.log(`${name} attacked`),
+    walk: () => console.log(`${name} walked`),
+  };
+}
 
-    return orders;
-  })();
+function flyer({ name }) {
+  return {
+    fly: () => {
+      console.log(`${name} flew`);
+    },
+  };
+}
 
-  var deliveryModule = (function () {
-    var deliveries = {},
-      EST_DELIVERY = "current estimated delivery time";
+function swimmingMonsterCreator(name) {
+  const monster = { name: name };
 
-    deliveries.getEstimatedDeliveryTime = function () {
-      var estimatedDeliveryTime = 1; // Hard-coded to 1 hour, but likely an API call.
+  return {
+    ...monster,
+    ...attackerAndWalker(monster),
+    ...swimmer(monster),
+  };
+}
 
-      PubSub.publish(EST_DELIVERY, estimatedDeliveryTime);
-    };
+function flyingSwimmingMonsterCreator(name) {
+  const monster = { name: name };
 
-    return deliveries;
-  })();
+  return {
+    ...monster,
+    ...attackerAndWalker(monster),
+    ...swimmer(monster),
+    ...flyer(monster),
+  };
+}
 
-  deliveryModule.getEstimatedDeliveryTime();
-});
+const obj = flyingSwimmingMonsterCreator("Monster");
+
+obj.attack();
+obj.walk();
+obj.swim();
+obj.fly();
