@@ -1,7 +1,4 @@
-const original = { a: 1, b: 2 };
-const copy = { ...original, c: 3 }; // copy => { a: 1, b: 2, c: 3 }
-
-const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
-
-console.log(copy);
-console.log(noA);
+const numbers = [1, 2, 3, 4, 5];
+const increasedByOne = numbers.map((num) => num + 1);
+console.log(increasedByOne);
+// console.log(noA);
