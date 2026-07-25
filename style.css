@@ -5,11 +5,39 @@
   margin: 0;
   padding: 0;
 }
+form {
+  font: 1em sans-sherif;
+  max-width: 320px;
+}
+p > label {
+  display: block;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width: 100%;
+  border: 2px solid #333333;
+  /* box-sizing: border-box; */
+}
 
 input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+input:focus:invalid {
+  box-shadow: none;
+}
+/* input:invalid {
   border: 2px dashed red;
-}
-
-input:valid {
+} */
+/* input:invalid:required {
+  background-image: linear-gradient(
+    to right,
+    rgb(152, 245, 152),
+    rgb(138, 138, 241)
+  );
+} */
+/* input:valid {
   border: 2px solid black;
-}
+} */
