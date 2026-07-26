@@ -1,30 +1,44 @@
 const form = document.querySelector("form");
 const email = document.getElementById("mail");
-const emailError = document.querySelector("#mail + span.error");
+const error = document.getElementById("error");
 
-email.addEventListener("input", (event) => {
-  if (email.validity.valid) {
-    emailError.textContent = "";
-    emailError.className = "error";
+const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
+
+const isValidEmail = () => {
+  const validity = email.value.length !== 0 && emailRegExp.test(email.value);
+  return validity;
+};
+
+const setEmailClass = (isValid) => {
+  email.className = isValid ? "valid" : "invalid";
+};
+
+const updateError = (isValid) => {
+  if (isValid) {
+    error.textContent = "";
+    error.removeAttribute("class");
   } else {
-    showError();
+    error.textContent = "I expect an email, darling!";
+    error.setAttribute("class", "active");
   }
-});
+};
 
-form.addEventListener("submit", (event) => {
-  if (!email.validity.valid) {
-    showError();
-    event.preventDefault();
-  }
-});
+const handleInput = () => {
+  const validity = isValidEmail();
+  setEmailClass(validity);
+  updateError(validity);
+};
 
-function showError() {
-  if (email.validity.valueMissing) {
-    emailError.textContent = "You need to enter an email address.";
-  } else if (email.validity.typeMismatch) {
-    emailError.textContent = "Entered value needs to be an email address.";
-  } else if (email.validity.tooShort) {
-    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
-  }
-  emailError.className = "error active";
-}
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const validity = isValidEmail();
+  setEmailClass(validity);
+  updateError(validity);
+};
+
+const validity = isValidEmail();
+setEmailClass(validity);
+
+email.addEventListener("input", handleInput);
+
+form.addEventListener("submit", handleSubmit);
