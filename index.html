@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form novalidate>
+    <form>
       <p>
         <label for="mail">
-          <span>Please enter an email address *:</span>
-          <input type="email" name="mail" id="mail" required minlength="8" />
-          <span class="error" aria-live="polite"></span>
+          <span>Please enter an email address:</span>
         </label>
+        <input type="text" id="mail" name="mail" />
+        <span id="error" aria-live="polite"></span>
       </p>
-      <button type="submit">Submit</button>
+      <button>Submit</button>
     </form>
 
     <script src="./main.js"></script>
