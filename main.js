@@ -1,16 +1,10 @@
-const fs = document.getElementById("fs");
-
-function checkFileSize() {
-  const files = fs.files;
-
-  if (files.length > 0) {
-    if (files[0].size > 75 * 1000) {
-      fs.setCustomValidity("The selected file must not be larger than 75 kB");
-      fs.reportValidity();
-      return;
-    }
-  }
-  fs.setCustomValidity("");
+function greet(name, callback) {
+  console.log(`Hello, ${name}`);
+  callback();
 }
 
-fs.addEventListener("change", checkFileSize);
+function afterGreet() {
+  console.log(`Greeting is complete!`);
+}
+
+greet("Anjali", afterGreet);
