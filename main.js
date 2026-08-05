@@ -1,10 +1,8 @@
-function greet(name, callback) {
-  console.log(`Hello, ${name}`);
-  callback();
+let myNumber = 1;
+
+function addOne() {
+  myNumber++;
 }
 
-function afterGreet() {
-  console.log(`Greeting is complete!`);
-}
-
-greet("Anjali", afterGreet);
+addOne();
+console.log(myNumber);
