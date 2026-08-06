@@ -1,8 +1,7 @@
-let myNumber = 1;
+let fs = require("fs");
 
-function addOne() {
-  myNumber++;
-}
+fs.readFile("movie.mp4", function finishReading(error, movieData) {
+  if (error) return console.error(error);
 
-addOne();
-console.log(myNumber);
+  // do something with the movieData
+});
