@@ -1,11 +1,12 @@
-new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    reject("Done!");
-  }, 3000);
+new Promise((resolve, reject) => {
+  reject("Nope");
 })
-  .then(function (e) {
-    console.log("done", e);
+  .then(() => {
+    console.log("Success");
   })
-  .catch(function (e) {
-    console.log("catch", e);
+  .catch(() => {
+    console.log("Fail");
+  })
+  .finally((res) => {
+    console.log("Finally");
   });
