@@ -1,7 +1,7 @@
-let fs = require("fs");
-
-fs.readFile("movie.mp4", function finishReading(error, movieData) {
-  if (error) return console.error(error);
-
-  // do something with the movieData
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 3000);
+}).then((result) => {
+  console.log(result);
 });
