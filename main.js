@@ -1,17 +1,11 @@
 new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    resolve(10);
+  setTimeout(function () {
+    reject("Done!");
   }, 3000);
 })
-  .then(function (num) {
-    console.log("first then: ", num);
-    return num * 2;
+  .then(function (e) {
+    console.log("done", e);
   })
-  .then(function (num) {
-    console.log("second then: ", num);
-    return num * 2;
-  })
-  .then(function (num) {
-    console.log("last then: ", num);
-    return num;
+  .catch(function (e) {
+    console.log("catch", e);
   });
