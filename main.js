@@ -1,7 +1,17 @@
-new Promise((resolve, reject) => {
+new Promise(function (resolve, reject) {
   setTimeout(() => {
     resolve(10);
   }, 3000);
-}).then((result) => {
-  console.log(result);
-});
+})
+  .then(function (num) {
+    console.log("first then: ", num);
+    return num * 2;
+  })
+  .then(function (num) {
+    console.log("second then: ", num);
+    return num * 2;
+  })
+  .then(function (num) {
+    console.log("last then: ", num);
+    return num;
+  });
