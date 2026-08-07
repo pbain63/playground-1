@@ -1,17 +1,17 @@
 let req1 = new Promise(function (resolve, reject) {
   setTimeout(function () {
     resolve("first");
-  }, 4000);
+  }, 8000);
 });
 let req2 = new Promise(function (resolve, reject) {
   setTimeout(function () {
-    reject("Second!");
+    resolve("Second!");
   }, 3000);
 });
-Promise.all([req1, req2])
-  .then(function (results) {
-    console.log("Then: ", results);
+Promise.race([req1, req2])
+  .then(function (one) {
+    console.log("Then: ", one);
   })
-  .catch(function (err) {
-    console.log("Catch: ", err);
+  .catch(function (one, two) {
+    console.log("Catch: ", one);
   });
