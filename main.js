@@ -1,17 +1,28 @@
-let req1 = new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    resolve("first");
-  }, 8000);
-});
-let req2 = new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    resolve("Second!");
-  }, 3000);
-});
-Promise.race([req1, req2])
-  .then(function (one) {
-    console.log("Then: ", one);
+const userLeft = true;
+const userWatchingCatMeme = false;
+
+function watchTutorialPromise() {
+  return new Promise((resolve, reject) => {
+    if (userLeft) {
+      reject({
+        name: "User Left",
+        message: ";(",
+      });
+    } else if (userWatchingCatMeme) {
+      reject({
+        name: "User Watching Cat Meme",
+        message: "Prodip < Cat",
+      });
+    } else {
+      resolve("Thumbs up and Subscribe");
+    }
+  });
+}
+
+watchTutorialPromise()
+  .then((message) => {
+    console.log("Success " + message);
   })
-  .catch(function (one, two) {
-    console.log("Catch: ", one);
+  .catch((error) => {
+    console.log(error.name + " " + error.message);
   });
