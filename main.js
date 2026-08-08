@@ -1,8 +1,7 @@
-let promise = new Promise(function (resolve, reject) {
-  setTimeout(() => resolve("done!"), 1000);
-});
-
-promise.then(
-  (result) => console.log(result),
-  (error) => console.log(error)
-);
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Value");
+  }, 2000);
+})
+  .finally(() => console.log("Promise ready"))
+  .then((result) => console.log(result));
