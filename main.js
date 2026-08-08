@@ -10,8 +10,8 @@ const recordVideThree = new Promise((resolve, reject) => {
   resolve("Video 3 Recorded");
 });
 
-Promise.all([recordVideoOne, recordVideoTwo, recordVideThree]).then(
-  (messages) => {
-    console.log(messages);
+Promise.race([recordVideoOne, recordVideoTwo, recordVideThree]).then(
+  (message) => {
+    console.log(message);
   }
 );
