@@ -1,7 +1,6 @@
 new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Value");
-  }, 2000);
+  throw new Error("error");
+  
 })
   .finally(() => console.log("Promise ready"))
-  .then((result) => console.log(result));
+  .catch((err) => console.log(err));
