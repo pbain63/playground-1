@@ -1,17 +1,12 @@
-const recordVideoOne = new Promise((resolve, reject) => {
-  resolve("Video 1 Recorded");
+Promise.resolve().then(() => console.log(1));
+
+setTimeout(() => {
+  console.log(2);
+}, 10);
+
+queueMicrotask(() => {
+  console.log(3);
+  queueMicrotask(() => console.log(4));
 });
 
-const recordVideoTwo = new Promise((resolve, reject) => {
-  resolve("Video 2 Recorded");
-});
-
-const recordVideThree = new Promise((resolve, reject) => {
-  resolve("Video 3 Recorded");
-});
-
-Promise.race([recordVideoOne, recordVideoTwo, recordVideThree]).then(
-  (message) => {
-    console.log(message);
-  }
-);
+console.log(5);
