@@ -1,14 +1,17 @@
-let p = new Promise((resolve, reject) => {
-  let a = 1 + 2;
-  if (a === 2) {
-    resolve("Success");
-  } else {
-    reject("Failed");
-  }
+const recordVideoOne = new Promise((resolve, reject) => {
+  resolve("Video 1 Recorded");
 });
 
-p.then((message) => {
-  console.log("This is the then " + message);
-}).catch((message) => {
-  console.log("This is the catch " + message);
+const recordVideoTwo = new Promise((resolve, reject) => {
+  resolve("Video 2 Recorded");
 });
+
+const recordVideThree = new Promise((resolve, reject) => {
+  resolve("Video 3 Recorded");
+});
+
+Promise.all([recordVideoOne, recordVideoTwo, recordVideThree]).then(
+  (messages) => {
+    console.log(messages);
+  }
+);
