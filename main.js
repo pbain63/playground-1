@@ -1,8 +1,8 @@
-new Promise((resolve) => {
-  console.log(1);
-  resolve(2);
-}).then((result) => {
-  console.log(result);
+let promise = new Promise(function (resolve, reject) {
+  setTimeout(() => resolve("done!"), 1000);
 });
 
-console.log(3);
+promise.then(
+  (result) => console.log(result),
+  (error) => console.log(error)
+);
