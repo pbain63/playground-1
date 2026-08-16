@@ -15,12 +15,16 @@ const server = {
 };
 
 async function getPersonsInfo(name) {
-  const people = await server.getPeople();
-  const person = people.find((person) => {
-    return person.name === name;
-  });
-  return person;
+  try {
+    const people = await server.getPeople();
+    const person = people.find((person) => {
+      return person.name === name;
+    });
+    return person;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-getPersonsInfo();
+// getPersonsInfo();
 console.log(getPersonsInfo());
