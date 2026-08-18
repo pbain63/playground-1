@@ -1,12 +1,12 @@
-async function f() {
-  try {
-    let response = await fetch("https://no-such-url");
-  } catch (error) {
-    alert(error);
-    // console.log(error);
-    // console.error(error);
-    
-    
+async function loadJson(url) {
+  let response = await fetch(url);
+
+  if (response.status == 200) {
+    const json = await response.json();
+    return json;
+  } else {
+    throw new Error(response.status);
   }
 }
-f();
+
+loadJson("https://javascript.info/no-such-user.json").catch(alert); // Error: 404
