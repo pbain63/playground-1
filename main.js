@@ -1,30 +1,14 @@
-function doubleAfter2Seconds(x) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(x * 2);
-    }, 2000);
-  });
+function orderTotal(order) {
+  return order.items.reduce(
+    (prev, cur) => cur.price * (cur.quality || 1) + prev,
+    0
+  );
 }
 
-// function addPromise(x) {
-//   return new Promise((resolve) => {
-//     doubleAfter2Seconds(10).then((a) => {
-//       doubleAfter2Seconds(20).then((b) => {
-//         doubleAfter2Seconds(30).then((c) => {
-//           resolve(x + a + b + c);
-//         });
-//       });
-//     });
-//   });
-// }
-
-async function addSync(x) {
-  const a = await doubleAfter2Seconds(10);
-  const b = await doubleAfter2Seconds(20);
-  const c = await doubleAfter2Seconds(30);
-  return x + a + b + c;
+if (
+  orderTotal({
+    items: [{ name: "Dragon candy", price: 2, quantity: 3 }],
+  }) !== 6
+) {
+  throw new Error("Check fail: Quantity");
 }
-
-addSync(10).then((sum) => {
-  console.log(sum);
-});
