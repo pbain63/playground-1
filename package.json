@@ -19,5 +19,8 @@
   "main": "main.js",
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
