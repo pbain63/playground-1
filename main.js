@@ -1,14 +1,8 @@
-function orderTotal(order) {
-  return order.items.reduce(
-    (prev, cur) => cur.price * (cur.quality || 1) + prev,
-    0
-  );
-}
+let expect = require('chai').expect;
 
-if (
-  orderTotal({
-    items: [{ name: "Dragon candy", price: 2, quantity: 3 }],
-  }) !== 6
-) {
-  throw new Error("Check fail: Quantity");
-}
+describe('FlickrFetcher', function() {
+    it('should exist', function() {
+        var FlickrFetcher = require('./flickr-fetcher.js');
+        expect(FlickrFetcher).to.not.be.undefined;
+    });
+});
