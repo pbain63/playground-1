@@ -1,15 +1,12 @@
-expect(someMockFunction.mock.calls).toHaveLength(1);
+import axios from "axios";
+import Users from "./users";
 
-expect(someMockFunction.mock.calls[0][0]).toBe("first arg");
+jest.mock("axios");
 
-expect(someMockFunction.mock.calls[0][1]).toBe("second arg");
+test("should fetch users", () => {
+  const users = [{ name: "Bob" }];
+  const resp = { data: users };
+  axios.get.mockResolvedValue(resp);
 
-expect(someMockFunction.mock.results[0].value).toBe("return value");
-
-expect(someMockFunction.mock.contexts[0]).toBe(element);
-
-expect(someMockFunction.mock.instances.length).toBe(2);
-
-expect(someMockFunction.mock.instances[0].name).toBe("test");
-
-expect(someMockFunction.mock.lastCall[0]).toBe("test");
+  return Users.all().then((data) => expect(data).toEqual(users));
+});
