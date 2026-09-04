@@ -1,11 +1,8 @@
-const filterTestFn = jest.fn();
+import axios from "axios";
 
-filterTestFn.mockReturnValueOnce(true).mockReturnValueOnce(false);
-
-const result = [11, 12].filter((num) => filterTestFn(num));
-
-console.log(result);
-
-console.log(filterTestFn.mock.calls[0][0]);
-
-console.log(filterTestFn.mock.calls[1][0]);
+class Users {
+  static all() {
+    return axios.get("/users.json").then((resp) => resp.data);
+  }
+}
+export default Users;
