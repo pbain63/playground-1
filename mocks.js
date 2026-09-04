@@ -1,10 +1,11 @@
-const myMock = jest.fn();
+const filterTestFn = jest.fn();
 
-console.log(myMock());
+filterTestFn.mockReturnValueOnce(true).mockReturnValueOnce(false);
 
-myMock
-  .mockReturnValueOnce(10)
-  .mockReturnValueOnce("x")
-  .mockReturnValueOnce(true);
+const result = [11, 12].filter((num) => filterTestFn(num));
 
-console.log(myMock(), myMock(), myMock(), myMock());
+console.log(result);
+
+console.log(filterTestFn.mock.calls[0][0]);
+
+console.log(filterTestFn.mock.calls[1][0]);
