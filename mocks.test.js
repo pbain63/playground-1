@@ -1,12 +1,21 @@
-import axios from "axios";
-import Users from "./users";
+import defaultExport, { bar, foo } from "../playground-1";
 
-jest.mock("axios");
+jest.mock("../playground", () => {
+  const originalModule = jest.requireActual("../playground");
 
-test("should fetch users", () => {
-  const users = [{ name: "Bob" }];
-  const resp = { data: users };
-  axios.get.mockResolvedValue(resp);
+  return {
+    __esModule: true,
+    ...originalModule,
+    default: jest.fn(() => "mocked baz"),
+    foo: "mocked foo",
+  };
+});
 
-  return Users.all().then((data) => expect(data).toEqual(users));
+test("should do a partial mock", () => {
+  const defaultExportResult = defaultExport();
+  expect(defaultExportResult).toBe("mocked baz");
+  expect(defaultExport).toHaveBeenCalled();
+
+  expect(foo).toBe("mocked foo");
+  expect(bar()).toBe("bar");
 });
