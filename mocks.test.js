@@ -1,21 +1,32 @@
-import defaultExport, { bar, foo } from "../playground-1";
+//
+jest.mock("../foo");
+const foo = require("../foo");
+//
+foo.mockImplementation(() => 42);
+foo();
+//
+const myMockFn = jest
+  .fn()
+  .mockImplementation((cb) => cb(null, true))
+  .mockImplementation((cb) => cb(null, false));
 
-jest.mock("../playground", () => {
-  const originalModule = jest.requireActual("../playground");
+myMockFn((err, val) => console.log(val));
 
-  return {
-    __esModule: true,
-    ...originalModule,
-    default: jest.fn(() => "mocked baz"),
-    foo: "mocked foo",
-  };
-});
+myMockFn((err, val) => console.log(val));
+//
+const myMockFn = jest
+  .fn(() => "default")
+  .mockImplementation(() => "first call")
+  .mockImplementation(() => "second call");
 
-test("should do a partial mock", () => {
-  const defaultExportResult = defaultExport();
-  expect(defaultExportResult).toBe("mocked baz");
-  expect(defaultExport).toHaveBeenCalled();
-
-  expect(foo).toBe("mocked foo");
-  expect(bar()).toBe("bar");
-});
+console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
+//
+const myObj = {
+  myMethod: jest.fn().mockReturnThis(),
+};
+// is the same as
+const otherObj = {
+  myMethod: jest.fn(function () {
+    return this;
+  }),
+};
