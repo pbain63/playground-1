@@ -1,32 +1,22 @@
-//
-jest.mock("../foo");
-const foo = require("../foo");
-//
-foo.mockImplementation(() => 42);
-foo();
-//
-const myMockFn = jest
-  .fn()
-  .mockImplementation((cb) => cb(null, true))
-  .mockImplementation((cb) => cb(null, false));
+expect(mockFunc).toHaveBeenCalled();
 
-myMockFn((err, val) => console.log(val));
+expect(mockFunc).toHaveBeenCalledWith(arg1, arg2);
 
-myMockFn((err, val) => console.log(val));
-//
-const myMockFn = jest
-  .fn(() => "default")
-  .mockImplementation(() => "first call")
-  .mockImplementation(() => "second call");
+expect(myMockFn).toHaveBeenLastCalledWith(arg1, arg2);
 
-console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
+expect(mockFunc).toMatchSnapshot();
 //
-const myObj = {
-  myMethod: jest.fn().mockReturnThis(),
-};
-// is the same as
-const otherObj = {
-  myMethod: jest.fn(function () {
-    return this;
-  }),
-};
+
+expect(mockFunc.mock.calls.length).toBeGreaterThan(0);
+
+expect(mockFunc.mock.calls).toContainEqual([arg1, arg2]);
+
+expect(mockFunc.mock.calls[mockFunc.mock.calls.length - 1]).toEqual([
+  arg1,
+  arg2,
+]);
+
+expect(mockFunc.mock.calls[mockFunc.mock.calls.length - 1][0]).toBe(42);
+
+expect(mockFunc.mock.calls).toEqual([[arg1, arg2]]);
+expect(mockFunc.getMockName()).toBe("a mock name");
