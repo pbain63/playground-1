@@ -1,8 +1,6 @@
-import axios from "axios";
+const myMockFn = jest
+  .fn()
+  .mockReturnValue("default")
+  .mockImplementation((scalar) => 42 + scalar)
+  .mockName("add42");
 
-class Users {
-  static all() {
-    return axios.get("/users.json").then((resp) => resp.data);
-  }
-}
-export default Users;
