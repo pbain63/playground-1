@@ -1,11 +1,11 @@
-function arithmatic() {
-  const num1 = parseFloat(prompt("Enter number 1"));
-  const num2 = parseFloat(prompt("Enter number 2"));
+function evenOrOdd() {
+  const num = parseFloat(prompt("Enter the number"));
 
-  const sum = num1 + num2;
-  const product = num1 * num2;
-
-  alert(sum);
-  alert(product);
+  if (num % 2 === 1) {
+    alert("Number is odd");
+  } else if (num % 2 === 0) {
+    alert("Even");
+  }
 }
-arithmatic();
+
+evenOrOdd();
