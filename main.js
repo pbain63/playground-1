@@ -1,11 +1,5 @@
-function evenOrOdd() {
-  const num = parseFloat(prompt("Enter the number"));
-
-  if (num % 2 === 1) {
-    alert("Number is odd");
-  } else if (num % 2 === 0) {
-    alert("Even");
-  }
+function pow(x, n) {
+  return n == 1 ? x : x * pow(x, n - 1);
 }
 
-evenOrOdd();
+alert(pow(2, 3));
