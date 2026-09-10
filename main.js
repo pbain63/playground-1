@@ -1,5 +1,9 @@
-let list = { value: 1 };
-list.next = { value: 2 };
-list.next.next = { value: 3 };
-list.next.next.next = { value: 4 };
-list.next.next.next.next = null;
+function sumTo(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+alert(sumTo(100));
