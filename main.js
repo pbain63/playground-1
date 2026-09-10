@@ -1,9 +1,6 @@
 function sumTo(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    sum += i;
-  }
-  return sum;
+  if (n == 1) return 1;
+  return n + sumTo(n - 1);
 }
 
 alert(sumTo(100));
