@@ -13,10 +13,17 @@ let list = {
 };
 
 function printReverseList(list) {
-  if (list.next) {
-    printReverseList(list.next);
+  let arr = [];
+  let tmp = list;
+
+  while (tmp) {
+    arr.push(tmp.value);
+    tmp = tmp.next;
   }
-  alert(list.value);
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    alert(arr[i]);
+  }
 }
 
 printReverseList(list);
