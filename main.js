@@ -12,12 +12,11 @@ let list = {
   },
 };
 
-function printList(list) {
-  alert(list.value);
-
+function printReverseList(list) {
   if (list.next) {
-    printList(list.next);
+    printReverseList(list.next);
   }
+  alert(list.value);
 }
 
-printList(list);
+printReverseList(list);
