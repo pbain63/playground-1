@@ -13,11 +13,10 @@ let list = {
 };
 
 function printList(list) {
-  let tmp = list;
+  alert(list.value);
 
-  while (tmp) {
-    alert(tmp.value);
-    tmp = tmp.next;
+  if (list.next) {
+    printList(list.next);
   }
 }
 
