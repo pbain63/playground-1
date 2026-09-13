@@ -1,8 +1,26 @@
-function sumRangeRecursive(n, total = 0) {
-  if (n <= 0) {
-    return total;
-  }
-  return sumRangeRecursive(n - 1, total + n);
-}
+const tree = {
+  name: "John",
+  children: [
+    {
+      name: "Jim",
+      children: [],
+    },
+    {
+      name: "zoe",
+      children: [
+        { name: "Kyle", children: [] },
+        { name: "Sophia", children: [] },
+      ],
+    },
+  ],
+};
 
-console.log(sumRangeRecursive(3));
+function printChildrenRecursive(t) {
+  if (t.children.length === 0) {
+    return;
+  }
+  t.children.forEach((child) => {
+    console.log(child.name);
+    printChildrenRecursive(child);
+  });
+}
