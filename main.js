@@ -1,8 +1,9 @@
-function countDown(n) {
+function sumRange(n) {
+  let total = 0;
   for (let i = n; i > 0; i--) {
-    console.log(i);
+    total += i;
   }
-  console.log("Horray");
+  return total;
 }
 
-countDown(3);
+console.log(sumRange(3));
