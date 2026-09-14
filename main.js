@@ -1,26 +1,11 @@
-const tree = {
-  name: "John",
-  children: [
-    {
-      name: "Jim",
-      children: [],
-    },
-    {
-      name: "zoe",
-      children: [
-        { name: "Kyle", children: [] },
-        { name: "Sophia", children: [] },
-      ],
-    },
-  ],
-};
-
-function printChildrenRecursive(t) {
-  if (t.children.length === 0) {
-    return;
+function collatz(n) {
+  if (n === 1) {
+    return 0;
+  } else if (n % 2 === 0) {
+    return 1 + collatz(n / 2);
+  } else if (n % 2 === 1) {
+    return 1 + collatz(3 * n + 1);
   }
-  t.children.forEach((child) => {
-    console.log(child.name);
-    printChildrenRecursive(child);
-  });
 }
+
+console.log(collatz(3));
