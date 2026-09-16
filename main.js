@@ -1,11 +1,11 @@
-function collatz(n) {
-  if (n === 1) {
-    return 0;
-  } else if (n % 2 === 0) {
-    return 1 + collatz(n / 2);
-  } else if (n % 2 === 1) {
-    return 1 + collatz(3 * n + 1);
+const factorial = function (n) {
+  if (n === 0) {
+    return 1;
   }
-}
+  if (!Number.isInteger(n) || n < 0) {
+    return;
+  }
+  return n * factorial(n - 1);
+};
 
-console.log(collatz(3));
+console.log(factorial(5));
