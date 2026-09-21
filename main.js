@@ -1,14 +1,21 @@
-const contains = function (object, searchValue) {
-  const values = Object.values(object);
+// The extra null check is required since typeof null === "object" evaluates to true
+const isObject = (value) => typeof value === 'object' && value !== null;
 
-  if (values.includes(searchValue)) return true;
+const totalIntegers = function (obj) {
+  let count = 0;
 
-  const nestedObjects = values.filter(
-    (value) => typeof value === "object" && value !== null
-  );
+  if (!isObject(obj)) {
+    return;
+  }
 
-  return nestedObjects.some((nestedObject) =>
-    contains(nestedObject, searchValue)
-  );
+  const elements = Object.values(obj);
+
+  for (const el of elements) {
+    if (Number.isInteger(el)) {
+      count++;
+    } else if (isObject(el)) {
+      count += totalIntegers(el);
+    }
+  }
+  return count;
 };
-
