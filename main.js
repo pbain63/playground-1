@@ -1,21 +1,17 @@
-// The extra null check is required since typeof null === "object" evaluates to true
-const isObject = (value) => typeof value === 'object' && value !== null;
+const contains = function (object, searchValue) {
+  const values = Object.values(object);
 
-const totalIntegers = function (obj) {
-  let count = 0;
+  // NaN === NaN evaluates to false
+  // Normally, we would have to do an explicit Number.isNaN() check to compare NaN equality
+  // However, Array.prototype.includes automatically handles this for us
+  if (values.includes(searchValue)) return true;
 
-  if (!isObject(obj)) {
-    return;
-  }
+  const nestedObjects = values.filter(
+    // typeof null === 'object' evaluates to true ¯\_(ツ)_/¯
+    (value) => typeof value === "object" && value !== null
+  );
 
-  const elements = Object.values(obj);
-
-  for (const el of elements) {
-    if (Number.isInteger(el)) {
-      count++;
-    } else if (isObject(el)) {
-      count += totalIntegers(el);
-    }
-  }
-  return count;
+  return nestedObjects.some((nestedObject) =>
+    contains(nestedObject, searchValue)
+  );
 };
