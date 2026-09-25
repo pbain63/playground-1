@@ -1,75 +1,26 @@
-const data = {
-  name: "Alice",
-  details: {
-    age: 25,
-    location: {
-      city: "Dhaka",
-      country: "Bangladesh"
-    }
-  }
+const insertIntoArray = function (array, position, value) {
+  return [...array.slice(0, position), value, ...array.slice(position)];
 };
 
-contains(data, "Bangladesh");const permutations = require("./permutations");
+const permutations = function (array) {
+  if (array.length === 0) {
+    return [[]];
+  }
 
-describe("permutations", () => {
-  test("1 possible permutation for a set containing 0 numbers", () => {
-    expect(permutations([])).toEqual([[]]);
-  });
+  const firstElement = array[0];
+  const rest = array.slice(1);
 
-  test.skip("1 possible permutation for a set containing 1 number", () => {
-    expect(permutations([1])).toEqual([[1]]);
-  });
+  const previousPermutations = permutations(rest);
+  const newPermutations = [];
 
-  test.skip("2 possible permutations for a set containing 2 numbers", () => {
-    expect(permutations([1, 2]).sort()).toEqual(
-      [
-        [1, 2],
-        [2, 1],
-      ].sort(),
-    );
-  });
+  for (const permutation of previousPermutations) {
+    for (let i = 0; i <= permutation.length; i += 1) {
+      const newPermutation = insertIntoArray(permutation, i, firstElement);
+      newPermutations.push(newPermutation);
+    }
+  }
 
-  test.skip("6 possible permutations for a set containing 3 numbers", () => {
-    expect(permutations([1, 2, 3]).sort()).toEqual(
-      [
-        [1, 2, 3],
-        [1, 3, 2],
-        [2, 1, 3],
-        [2, 3, 1],
-        [3, 1, 2],
-        [3, 2, 1],
-      ].sort(),
-    );
-  });
+  return newPermutations;
+};
 
-  test.skip("24 possible permutations for a set containing 4 numbers", () => {
-    expect(permutations([1, 2, 3, 4]).sort()).toEqual(
-      [
-        [1, 2, 3, 4],
-        [1, 2, 4, 3],
-        [1, 3, 2, 4],
-        [1, 3, 4, 2],
-        [1, 4, 2, 3],
-        [1, 4, 3, 2],
-        [2, 1, 3, 4],
-        [2, 1, 4, 3],
-        [2, 3, 1, 4],
-        [2, 3, 4, 1],
-        [2, 4, 1, 3],
-        [2, 4, 3, 1],
-        [3, 1, 2, 4],
-        [3, 1, 4, 2],
-        [3, 2, 1, 4],
-        [3, 2, 4, 1],
-        [3, 4, 1, 2],
-        [3, 4, 2, 1],
-        [4, 1, 2, 3],
-        [4, 1, 3, 2],
-        [4, 2, 1, 3],
-        [4, 2, 3, 1],
-        [4, 3, 1, 2],
-        [4, 3, 2, 1],
-      ].sort(),
-    );
-  });
-});
+permutations(5);
