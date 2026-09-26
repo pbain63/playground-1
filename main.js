@@ -1,26 +1,28 @@
-const insertIntoArray = function (array, position, value) {
-  return [...array.slice(0, position), value, ...array.slice(position)];
-};
-
 const permutations = function (array) {
+  // Base case:
+  // There is exactly one permutation of an empty array:
+  // the empty array itself.
   if (array.length === 0) {
     return [[]];
   }
 
-  const firstElement = array[0];
-  const rest = array.slice(1);
+  const result = [];
 
-  const previousPermutations = permutations(rest);
-  const newPermutations = [];
+  for (let i = 0; i < array.length; i++) {
+    const current = array[i];
 
-  for (const permutation of previousPermutations) {
-    for (let i = 0; i <= permutation.length; i += 1) {
-      const newPermutation = insertIntoArray(permutation, i, firstElement);
-      newPermutations.push(newPermutation);
+    // Remove the current element.
+    const remaining = array.slice(0, i).concat(array.slice(i + 1));
+
+    // Get all permutations of the remaining elements.
+    const smallerPermutations = permutations(remaining);
+
+    // Add the current element to the beginning
+    // of each smaller permutation.
+    for (const permutation of smallerPermutations) {
+      result.push([current, ...permutation]);
     }
   }
 
-  return newPermutations;
+  return result;
 };
-
-permutations(5);
