@@ -1,18 +1,13 @@
-const pascal = function (row) {
-  if (row === 1) {
-    return [1];
+function oddNumbers(maxNumber) {
+    let currentNumber = 1;
+  
+    while (currentNumber < maxNumber) {
+      if (currentNumber % 2 !== 0) {
+        console.log(currentNumber);
+      }
+  
+      currentNumber += 1;
+    }
   }
 
-  const previousRow = pascal(row - 1);
-  const currentRow = [1];
-
-  for (let i = 0; i < previousRow.length - 1; i++) {
-    currentRow.push(previousRow[i] + previousRow[i + 1]);
-  }
-
-  currentRow.push(1);
-
-  return currentRow;
-};
-
-module.exports = pascal;
+  oddNumbers(10);
