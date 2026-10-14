@@ -1,12 +1,10 @@
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-function findValue(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let item = arr[i];
-    if (item === 1) {
-      return item;
-    }
+function reverseArray(arr) {
+  let newArr = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i]);
   }
+  return newArr;
 }
 
-
+console.log(reverseArray([1, 2, 3]));
+console.log(reverseArray([1, 2, 3, 4, 5, 6]));
