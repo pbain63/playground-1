@@ -1,15 +1,14 @@
-function multiplyAll(arr1, arr2) {
-  if (arr1.length !== arr2.length) return undefined;
+function logTime(arr) {
+  let numberOfLoops = 0;
 
-  let total = 0;
-  for (const i of arr1) {
-    for (const j of arr2) {
-      total += i * j;
-    }
+  for (let i = 1; i < arr.length; i *= 2) {
+    numberOfLoops++;
   }
 
-  return total;
+  return numberOfLoops;
 }
 
-console.log(multiplyAll([1, 2], [5, 6]));
-console.log(multiplyAll([1, 2, 3, 4], [5, 3, 1, 8]));
+console.log(logTime([1]));
+console.log(logTime([1, 2]));
+console.log(logTime([1, 2, 3, 4]));
+console.log(logTime([1, 2, 3, 4, 5, 6, 7, 8]));
