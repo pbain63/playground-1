@@ -1,14 +1,18 @@
 const t0 = performance.now();
 
-const numbers = [1, 2, 3, 4, 5, 6];
+const numbers = [1, 2, 3];
 
-function printFirstHalf(list) {
-  for (let i = 0; i < list.length / 2; i++) {
+function printTwiceForNoReason(list) {
+  for (let i = 0; i < list.length; i++) {
     console.log(list[i]);
+  }
+
+  for (let j = 0; j < list.length; j++) {
+    console.log(list[j]);
   }
 }
 
-printFirstHalf(numbers);
+printTwiceForNoReason(numbers);
 
 const t1 = performance.now();
 
