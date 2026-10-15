@@ -1,12 +1,18 @@
-function fibonacci(num) {
-  if (num === 0) return 0;
-  else if (num === 1) return 1;
+const t0 = performance.now();
 
-  return fibonacci(num - 1) + fibonacci(num - 2);
+function factorial(n) {
+  if (n === 0) return 1;
+
+  return n * factorial(n - 1);
 }
 
-console.log(fibonacci(0));
-console.log(fibonacci(1));
-console.log(fibonacci(2));
-console.log(fibonacci(3));
-console.log(fibonacci(4));
+console.log(factorial(0));
+console.log(factorial(1));
+console.log(factorial(2));
+console.log(factorial(3));
+console.log(factorial(4));
+
+
+const t1 = performance.now();
+
+console.log("The function took: " + (t1 - t0) + " milliseconds.");
