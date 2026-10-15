@@ -1,17 +1,14 @@
 const t0 = performance.now();
 
-const drinks = ["water", "coffee"];
-const persons = ["person 1", "person 2", "person 3", "person 4"];
+const numbers = [1, 2, 3, 4, 5, 6];
 
-function servingDrinks(drinksList, personsList) {
-  for (let i = 0; i < drinksList.length; i++) {
-    for (let j = 0; j < personsList.length; j++) {
-      console.log(`Gives ${drinksList[i]} to ${personsList[j]}`);
-    }
+function printFirstHalf(list) {
+  for (let i = 0; i < list.length / 2; i++) {
+    console.log(list[i]);
   }
 }
 
-servingDrinks(drinks, persons);
+printFirstHalf(numbers);
 
 const t1 = performance.now();
 
