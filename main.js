@@ -1,9 +1,8 @@
-function linearithmic(n) {
-  for (let i = 0; i < n; i++) {
-    for (let j = 1; j < n; j = j * 2) {
-      console.log("Hello");
-    }
-  }
+function fibonacci(num) {
+  if (num === 0) return 0;
+  else if (num === 1) return 1;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
-linearithmic(3);
+fibonacci(4);
