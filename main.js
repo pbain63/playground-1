@@ -1,19 +1,17 @@
 const t0 = performance.now();
 
-const numbers = [1, 2, 3, 4];
-const letters = ["a", "b"];
+const drinks = ["water", "coffee"];
+const persons = ["person 1", "person 2", "person 3", "person 4"];
 
-function printLists(listOne, listTwo) {
-  for (let index1 = 0; index1 < listOne.length; index1++) {
-    console.log(listOne[index1]);
-  }
-
-  for (let j = 0; j < listTwo.length; j++) {
-    console.log(listTwo[j]);
+function servingDrinks(drinksList, personsList) {
+  for (let i = 0; i < drinksList.length; i++) {
+    for (let j = 0; j < personsList.length; j++) {
+      console.log(`Gives ${drinksList[i]} to ${personsList[j]}`);
+    }
   }
 }
 
-printLists(numbers, letters);
+servingDrinks(drinks, persons);
 
 const t1 = performance.now();
 
