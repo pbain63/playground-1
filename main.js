@@ -1,20 +1,22 @@
 const t0 = performance.now();
 
-function factorial(n) {
-  let num = n;
-  if (n === 0) return 1;
+const productList = [
+  { name: "Laptop", price: 18487 },
+  { name: "Keyboard", price: 356 },
+  { name: "Monitor", price: 8345 },
+  { name: "Tablet", price: 9875 },
+];
 
-  for (let i = 0; i < n; i++) {
-    num = n * factorial(n - 1);
+function lookupPrice(name, list) {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].name === name) {
+      console.log(`Price of '${list[i].name}' is: ${list[i].price}`);
+      break;
+    }
   }
-  return num;
 }
 
-console.log(factorial(0));
-console.log(factorial(1));
-console.log(factorial(2));
-console.log(factorial(3));
-console.log(factorial(4));
+lookupPrice("Monitor", productList);
 
 const t1 = performance.now();
 
