@@ -1,18 +1,24 @@
 const t0 = performance.now();
 
-const numbers = [1, 2, 3];
+const fruits = ["apple", "strawberry", "watermelon"];
 
-function printTwiceForNoReason(list) {
-  for (let i = 0; i < list.length; i++) {
-    console.log(list[i]);
+function printAndPair(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
   }
 
-  for (let j = 0; j < list.length; j++) {
-    console.log(list[j]);
+  const totalPairs = arr.length * arr.length;
+console.log("Estimated paired elements length:", totalPairs);
+
+
+  for (let j = 0; j < arr.length; j++) {
+    for (let k = 0; k < arr.length; k++) {
+      console.log(`${arr[j]} - ${arr[k]}`);
+    }
   }
 }
 
-printTwiceForNoReason(numbers);
+printAndPair(fruits);
 
 const t1 = performance.now();
 
